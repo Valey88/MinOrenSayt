@@ -1,0 +1,145 @@
+.Home {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.HomeContainer {
+  width: 143rem;
+}
+.HomeHeaderBlock {
+  width: 100%;
+  height: 80rem;
+  display: flex;
+  flex-direction: column;
+  background-image: url(/public/Mask\ group.png);
+  border-radius: 15rem;
+}
+.blockHeaderImg {
+  display: flex;
+  justify-content: space-between;
+  padding: 10rem;
+}
+.cards {
+  width: 18rem;
+  height: 18rem;
+}
+.gerb {
+  width: 9rem;
+  height: 10rem;
+}
+.HomeHeaderDescription {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  grid-gap: 5rem;
+  padding-left: 5rem;
+}
+.HomeHeaderDescription h2 {
+  font-size: 6rem;
+}
+.HomeHeaderDescription p {
+  font-size: 3rem;
+  font-weight: 100;
+}
+.HomeFooterDescription {
+  padding-top: 5rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+}
+.HomeFooterDescription div {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  grid-gap: 5rem;
+}
+.HomeFooterDescription h2 {
+  font-size: 12rem;
+}
+.HomeFooterDescriptionItem button {
+  background: none;
+  border: 2px solid #4e89fb;
+  color: #4e89fb;
+  width: 30rem;
+}
+.aboutSection {
+  width: 100%;
+  margin-top: 15rem;
+}
+.aboutContainer {
+  width: 143rem;
+}
+.aboutHeader {
+  display: flex;
+  justify-content: left;
+  font-size: 8rem;
+  padding-bottom: 10rem;
+}
+.aboutContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 14rem;
+}
+.aboutContentItem1 {
+  width: 65rem;
+  height: 65rem;
+  background: linear-gradient(140.97deg, #e1f3ff -2.2%, #b9e2ff 93.67%);
+  border-radius: 10rem;
+  padding: 5rem;
+}
+.aboutContentItem1 h2 {
+  font-size: 3rem;
+}
+.aboutContentItem1 p {
+  font-size: 3rem;
+}
+.aboutContentItem2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  grid-gap: 4rem;
+}
+.aboutContentContainer {
+  background-image: url(/public//РЎР»РѕР№_13.png);
+}
+.items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  grid-gap: 4rem;
+}
+.Item1 {
+  width: 65rem;
+  height: 30rem;
+  padding: 6rem;
+  border: 6px solid #fcde44;
+  border-radius: 7rem;
+  background: rgba(255, 255, 255, 0.8);
+}
+.Item1 h2 {
+  font-size: 4.5rem;
+  padding-bottom: 3rem;
+}
+.Item1 p {
+  font-size: 3rem;
+}
+.Item2 {
+  width: 65rem;
+  height: 30rem;
+  padding: 6rem;
+  border: 6px solid #69db00;
+  border-radius: 7rem;
+  background: rgba(255, 255, 255, 0.8);
+}
+.Item2 h2 {
+  font-size: 4.5rem;
+  padding-bottom: 3rem;
+}
+.Item2 p {
+  font-size: 2.5rem;
+}
