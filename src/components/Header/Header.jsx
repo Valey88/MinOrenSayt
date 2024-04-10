@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import "./Header.css";
 import { useState } from "react";
+import Modal from "../modal/Modal";
 
 export default function Header() {
   const [isOpen, setOpen] = useState(false);
@@ -33,7 +34,7 @@ export default function Header() {
           </ul>
         </nav>
         <div>
-          <button>Регистрация</button>
+          <Modal />
         </div>
         <div className="headerMenu">
           <button onClick={() => setOpen(!isOpen)}>

@@ -13,6 +13,7 @@
   display: flex;
   flex-direction: column;
   background-image: url(/public/Mask\ group.png);
+  background-size: cover;
   border-radius: 15rem;
 }
 .blockHeaderImg {
@@ -103,9 +104,13 @@
   flex-direction: column;
   grid-gap: 4rem;
 }
-.aboutContentContainer {
-  background-image: url(/public//РЎР»РѕР№_13.png);
+.aboutContentItem2 {
+  background-image: url(/public/РЎР»РѕР№_13.png);
+  background-size: cover;
 }
+/* .aboutContentContainer {
+  background-image: url(/public//РЎР»РѕР№_13.png);
+} */
 .items {
   display: flex;
   justify-content: center;

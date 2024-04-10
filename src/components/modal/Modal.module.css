@@ -1,0 +1,88 @@
+.modalItemInput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 2.5rem;
+  padding-bottom: 2rem;
+}
+.modalButton {
+  width: 25rem;
+  height: 6rem;
+  border: none;
+  background-color: #fdcc62;
+  color: black;
+  border-radius: 2rem;
+  font-size: 2rem;
+}
+.modalHeadButton {
+  width: 25rem;
+  height: 6rem;
+  border: none;
+  background-color: #fcde44;
+  color: black;
+  border-radius: 2rem;
+  font-size: 2rem;
+}
+
+.modalContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  grid-gap: 2rem;
+}
+.container {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items:  center;
+  flex-direction: column;
+}
+.containerHead {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 1rem;
+}
+.containerHead h2 {
+  font-size: 4rem;
+  color: #fdcc62;
+  margin-bottom: 3rem;
+}
+.containerHead p {
+  font-size: 4rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #ffffff 38.5%, #528cfb 100%);
+  padding: 1rem;
+  border-radius: 2.5rem;
+}
+.modalInput {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-bottom: 2px solid black;
+  height: 4rem;
+  font-size: 2rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  margin-bottom: 3rem;
+}
+.modalInput:hover {
+  border-bottom: 2px solid #fdcc62;
+  transition: all 0.4s ease-in-out;
+}
+.modalInput:focus {
+  outline: none;
+}
+.modalTextarea {
+  width: 100%;
+  border: 2px solid black;
+  height: 12rem;
+  border-radius: 15px;
+  font-size: 2rem;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+}
