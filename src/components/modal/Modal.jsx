@@ -36,7 +36,6 @@ const style = {
 
 export default function BasicModal({ city, setCity }) {
   const [open, setOpen] = React.useState(false);
-
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -82,6 +81,7 @@ export default function BasicModal({ city, setCity }) {
       setPhoneNumber("");
     }
   };
+  console.log(city);
 
   return (
     <div>
@@ -147,7 +147,28 @@ export default function BasicModal({ city, setCity }) {
                   />
                 </div>
                 <div className={styles.modalItemInput}>
-                 
+                  <select
+                    value={city}
+                    onChange={(e) => setCity(e.target.value)}
+                    className={styles.modalInput}
+                  >
+                    <option value="">Выберите город</option>
+                    <option value="1">1 город</option>
+                    <option value="2">2 город</option>
+                    <option value="3">3 город</option>
+                    <option value="">Выберите город</option>
+                    <option value="1">1 город</option>
+                    <option value="2">2 город</option>
+                    <option value="3">3 город</option>
+                    <option value="">Выберите город</option>
+                    <option value="1">1 город</option>
+                    <option value="2">2 город</option>
+                    <option value="3">3 город</option>
+                    <option value="">Выберите город</option>
+                    <option value="1">1 город</option>
+                    <option value="2">2 город</option>
+                    <option value="3">3 город</option>
+                  </select>
                 </div>
                 <div className={styles.modalItemInput}>
                   <img src="/public/people.svg" alt="" />

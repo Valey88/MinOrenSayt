@@ -36,7 +36,7 @@
   width: 80%;
   display: flex;
   justify-content: center;
-  align-items:  center;
+  align-items: center;
   flex-direction: column;
 }
 .containerHead {
@@ -85,4 +85,11 @@
   padding: 2rem;
   display: flex;
   align-items: center;
+}
+select{
+   width: 20rem;
+   height: 10rem;
+   overflow-y: scroll;
+   position: absolute;
+   top: 20;
 }

@@ -3,9 +3,8 @@ import "./Header.css";
 import { useState } from "react";
 import Modal from "../modal/Modal";
 
-export default function Header() {
+export default function Header({city , setCity}) {
   const [isOpen, setOpen] = useState(false);
-  const [city, setCity] = useState();
   console.log(city);
 
   return (
