@@ -39,8 +39,9 @@
   grid-gap: 0.4rem;
 }
 .headerNavItem a {
-  font-size: 1.8rem;
-  font-weight: light;
+  font-size: 2rem;
+  font-weight:  bold;
+  color: #000854;
 }
 .headerMenu {
   display: none;

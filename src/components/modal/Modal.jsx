@@ -34,11 +34,11 @@ const style = {
   },
 };
 
-export default function BasicModal({ id }) {
+export default function BasicModal({ city, setCity }) {
   const [open, setOpen] = React.useState(false);
+
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [roomId, setRoomId] = useState(id);
 
   const addNewOrder = async () => {
     console.log({
@@ -147,13 +147,7 @@ export default function BasicModal({ id }) {
                   />
                 </div>
                 <div className={styles.modalItemInput}>
-                  <img src="/public/people.svg" alt="" />
-                  <input
-                    className={styles.modalInput}
-                    placeholder="Город"
-                    type="text"
-                    onChange={(e) => setTimeStart(e.target.value)}
-                  />
+                 
                 </div>
                 <div className={styles.modalItemInput}>
                   <img src="/public/people.svg" alt="" />

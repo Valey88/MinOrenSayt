@@ -38,10 +38,12 @@
 }
 .HomeHeaderDescription h2 {
   font-size: 6rem;
+  font-weight: 100;
 }
 .HomeHeaderDescription p {
   font-size: 3rem;
   font-weight: 100;
+  text-align: left;
 }
 .HomeFooterDescription {
   padding-top: 5rem;
@@ -63,7 +65,11 @@
   background: none;
   border: 2px solid #4e89fb;
   color: #4e89fb;
-  width: 30rem;
+  width: 35rem;
+  height: 7.5rem;
+  font-size: 3rem;
+  font-weight: bold;
+  background-color: #fff;
 }
 .aboutSection {
   width: 100%;
@@ -104,14 +110,14 @@
   flex-direction: column;
   grid-gap: 4rem;
 }
-.aboutContentItem2 {
-  background-image: url(/public/РЎР»РѕР№_13.png);
+.image {
+  position: absolute;
+  z-index: -100;
   background-size: cover;
+  width: 110rem;
 }
-/* .aboutContentContainer {
-  background-image: url(/public//РЎР»РѕР№_13.png);
-} */
 .items {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

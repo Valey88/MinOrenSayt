@@ -5,6 +5,8 @@ import Modal from "../modal/Modal";
 
 export default function Header() {
   const [isOpen, setOpen] = useState(false);
+  const [city, setCity] = useState();
+  console.log(city);
 
   return (
     <>
@@ -34,7 +36,7 @@ export default function Header() {
           </ul>
         </nav>
         <div>
-          <Modal />
+          <Modal city={city} setCity={setCity} />
         </div>
         <div className="headerMenu">
           <button onClick={() => setOpen(!isOpen)}>

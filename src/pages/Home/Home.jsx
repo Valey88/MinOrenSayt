@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./Home.module.css";
 
-const Home = () => {
+const Home = ({city, setCity}) => {
   return (
     <div className={style.Home}>
       <div>
@@ -72,6 +72,7 @@ const Home = () => {
                         форумов
                       </p>
                     </div>
+                    <img className={style.image} src="/public/РЎР»РѕР№_13.png" alt="" />
                   </div>
                 </div>
               </div>
