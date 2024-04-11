@@ -5,13 +5,15 @@ import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
 import { Route, Routes } from "react-router-dom";
 import Modal from "./components/modal/Modal";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [city, setCity] = useState("");
-  console.log(city);
+  const [rayon, setRayon] = useState("");
+
   return (
     <>
-      <Header city={city} setCity={setCity} />
+      <Header city={city} setCity={setCity} rayon={rayon} setRayon={setRayon} />
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="/Admin" element={<Admin />} />
@@ -19,6 +21,7 @@ function App() {
         <Route path="/CreateRooms" element={<CreateRooms />} />
         <Route path="/DeleteImage" element={<DeleteImage />} /> */}
       </Routes>
+      <Footer />
     </>
   );
 }

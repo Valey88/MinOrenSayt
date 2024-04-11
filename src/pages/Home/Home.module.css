@@ -154,3 +154,17 @@
 .Item2 p {
   font-size: 2.5rem;
 }
+.underMap {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+}
+
+.map {
+  width: 100px;
+  height: 100px;
+}
+
+[class*="copyrights-pane"] {
+  display: none !important;
+}

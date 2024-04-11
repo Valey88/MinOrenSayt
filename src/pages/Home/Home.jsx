@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./Home.module.css";
-
-const Home = ({city, setCity}) => {
+import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
+const Home = ({ city, setCity }) => {
   return (
     <div className={style.Home}>
       <div>
@@ -56,7 +56,6 @@ const Home = ({city, setCity}) => {
               <div className={style.aboutContentItem2}>
                 <div className={style.aboutContentContainer}>
                   <div className={style.items}>
-                  
                     <div className={style.Item1}>
                       <h2>Участникам форума</h2>
                       <p>
@@ -72,11 +71,34 @@ const Home = ({city, setCity}) => {
                         форумов
                       </p>
                     </div>
-                    <img className={style.image} src="/public/РЎР»РѕР№_13.png" alt="" />
+                    <img
+                      className={style.image}
+                      src="/public/РЎР»РѕР№_13.png"
+                      alt=""
+                    />
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div className={style.mapSection}>
+          <div className={style.aboutHeader}>
+            <h2>Карта мероприятий</h2>
+          </div>
+          <YMaps>
+            <Map
+              defaultState={{ center: [51.763885, 55.119018], zoom: 18 }}
+              width={1430}
+              height={700}
+            >
+              <Placemark defaultGeometry={[51.763885, 55.119018]} />
+            </Map>
+          </YMaps>
+          ;
+          <div className={style.underMap}>
+            <p>ДКиС “Газовик”</p>
+            <p>ОГАУ</p>
           </div>
         </div>
       </div>

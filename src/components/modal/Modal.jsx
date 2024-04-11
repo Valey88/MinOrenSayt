@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { useState } from "react";
-
+import { rayons } from "./datalist";
 import styles from "./Modal.module.css";
 
 const style = {
@@ -34,7 +34,7 @@ const style = {
   },
 };
 
-export default function BasicModal({ city, setCity }) {
+export default function BasicModal({ city, setCity, rayon, setRayon }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -82,7 +82,7 @@ export default function BasicModal({ city, setCity }) {
     }
   };
   console.log(city);
-
+  console.log(rayon);
   return (
     <div>
       <button className={styles.modalHeadButton} onClick={handleOpen}>
@@ -150,34 +150,31 @@ export default function BasicModal({ city, setCity }) {
                   <select
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
-                    className={styles.modalInput}
+                    className={styles.cityList}
                   >
                     <option value="">Выберите город</option>
-                    <option value="1">1 город</option>
-                    <option value="2">2 город</option>
-                    <option value="3">3 город</option>
-                    <option value="">Выберите город</option>
-                    <option value="1">1 город</option>
-                    <option value="2">2 город</option>
-                    <option value="3">3 город</option>
-                    <option value="">Выберите город</option>
-                    <option value="1">1 город</option>
-                    <option value="2">2 город</option>
-                    <option value="3">3 город</option>
-                    <option value="">Выберите город</option>
-                    <option value="1">1 город</option>
-                    <option value="2">2 город</option>
-                    <option value="3">3 город</option>
+                    <option value="г. Оренбург">г. Оренбург</option>
+                    <option value="г. Бугуруслан">г. Бугуруслан</option>
+                    <option value="г. Медногорск">г. Медногорск</option>
+                    <option value="г. Новотроицк">г. Новотроицк</option>
+                    <option value="г. Орск">г. Орск</option>
                   </select>
-                </div>
-                <div className={styles.modalItemInput}>
-                  <img src="/public/people.svg" alt="" />
-                  <input
-                    className={styles.modalInput}
-                    placeholder="Район"
-                    type="text"
-                    onChange={(e) => setTimeStart(e.target.value)}
-                  />
+                  <select
+                    value={rayon}
+                    onChange={(e) => setRayon(e.target.value)}
+                    className={styles.cityList}
+                  >
+                    <option value="">Выберите район</option>
+                    {rayons.map((rayon) => (
+                      <option value={rayon.name1}>{rayon.name2}</option>
+                    ))}
+                    {/* <option value="">Выберите район</option>
+                    <option value="г. Оренбург">г. Оренбург</option>
+                    <option value="г. Бузулук">г. Бугуруслан</option>
+                    <option value="г. Медногорск">г. Медногорск</option>
+                    <option value="г. Новотроицк">г. Новотроицк</option>
+                    <option value="г. Орск">г. Орск</option> */}
+                  </select>
                 </div>
                 <div className={styles.modalItemInput}>
                   <button className={styles.modalButton} onClick={addNewOrder}>

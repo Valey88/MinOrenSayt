@@ -86,10 +86,22 @@
   display: flex;
   align-items: center;
 }
-select{
-   width: 20rem;
-   height: 10rem;
-   overflow-y: scroll;
-   position: absolute;
-   top: 20;
+.cityList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 1rem;
+  width: 25rem;
+  border: none;
+  border-bottom: 2px solid black;
+  font-size: 2rem;
+}
+.cityList:hover {
+  border-bottom: 2px solid #fdcc62;
+  transition: all 0.4s ease-in-out;
+}
+.cityList:focus {
+  outline: none;
 }
