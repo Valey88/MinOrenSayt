@@ -35,3 +35,4 @@ footer ul{
     gap: 2rem;
 }
 
+@media (max-width: 1024px) {}

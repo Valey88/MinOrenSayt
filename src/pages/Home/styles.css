@@ -39,3 +39,10 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
+@media (max-width: 1024px) {
+  .swiper {
+    width: 900px;
+    height: 55rem;
+  }
+}

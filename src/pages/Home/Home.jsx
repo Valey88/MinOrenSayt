@@ -22,34 +22,37 @@ const Home = ({ city, setCity }) => {
   return (
     <div className={style.Home}>
       <div className={style.all}>
-        <div className={style.HomeContainer}>
-          <div className={style.HomeHeaderBlock}>
-            <div className={style.blockHeaderImg}>
-              <div className={style.cards}>
-                <img src="/public/2 3 (1).png" alt="" />
+        <div className={style.mapCenter}>
+          <div className={style.HomeContainer}>
+            <div className={style.HomeHeaderBlock}>
+              <div className={style.blockHeaderImg}>
+                <div className={style.cards}>
+                  <img src="/public/2 3 (1).png" alt="" />
+                </div>
+                <div className={style.gerb}>
+                  <img src="/public/image 15 (1).png" alt="" />
+                </div>
               </div>
-              <div className={style.gerb}>
-                <img src="/public/image 15 (1).png" alt="" />
+              <div className={style.HomeHeaderDescription}>
+                <h2>22 - 23 мая</h2>
+                <p>
+                  Оренбург <br />
+                  ДКиС “Газовик”
+                </p>
               </div>
-            </div>
-            <div className={style.HomeHeaderDescription}>
-              <h2>22 - 23 мая</h2>
-              <p>
-                Оренбург <br />
-                ДКиС “Газовик”
-              </p>
-            </div>
-            <div className={style.HomeFooterDescription}>
-              <div className={style.HomeFooterDescriptionItem}>
-                <h2>Форум труда в</h2>
-                <button>Принять участие</button>
-              </div>
-              <div>
-                <h2>Оренбургской области</h2>
+              <div className={style.HomeFooterDescription}>
+                <div className={style.HomeFooterDescriptionItem}>
+                  <h2>Форум труда в</h2>
+                  <button>Принять участие</button>
+                </div>
+                <div>
+                  <h2>Оренбургской области</h2>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
         <div className={style.aboutSection}>
           <div className={style.aboutContainer}>
             <div className={style.aboutHeader}>
@@ -103,20 +106,21 @@ const Home = ({ city, setCity }) => {
           <div className={style.aboutHeader}>
             <h2>Карта мероприятий</h2>
           </div>
-          <div className={style.mapContainer}>
-            <YMaps>
-              <Map
-                defaultState={{ center: [51.763885, 55.119018], zoom: 18 }}
-                width={-1}
-                height={650}
-              >
-                <Placemark defaultGeometry={[51.763885, 55.119018]} />
-              </Map>
-            </YMaps>
-          </div>
-
-          <div className={style.underMap}>
-            <p>ДКиС “Газовик”</p>
+          <div className={style.mapCenter}>
+            <div className={style.mapContainer}>
+              <YMaps>
+                <Map
+                  defaultState={{ center: [51.763885, 55.119018], zoom: 18 }}
+                  width={-1}
+                  height={650}
+                >
+                  <Placemark defaultGeometry={[51.763885, 55.119018]} />
+                </Map>
+              </YMaps>
+            </div>
+            <div className={style.underMap}>
+              <p>ДКиС “Газовик”</p>
+            </div>
           </div>
         </div>
         <div className={style.sliderSection}>

@@ -4,6 +4,9 @@
   justify-content: center;
   align-items: center;
 }
+.all {
+  width: 100%;
+}
 .HomeContainer {
   width: 143rem;
 }
@@ -114,7 +117,7 @@
   position: absolute;
   z-index: -100;
   background-size: cover;
-  width: 110rem;
+  width: 90rem;
 }
 .items {
   width: 100%;
@@ -154,17 +157,11 @@
 .Item2 p {
   font-size: 2.5rem;
 }
+
 .underMap {
-  display: flex;
-  font-size: 2rem;
+  font-size: 3rem;
   margin-top: 2rem;
 }
-
-.map {
-  width: 100px;
-  height: 100px;
-}
-
 [class*="copyrights-pane"] {
   display: none !important;
 }
@@ -179,6 +176,13 @@
 .mapContainer {
   width: 143rem;
 }
+.mapCenter {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
 .sliderSection {
   margin-bottom: 10rem;
 }
@@ -189,18 +193,54 @@
   }
 }
 @media (max-width: 1024px) {
-  .all {
+  .image {
+    width: 70rem;
+  }
+  .HomeContainer {
     width: 100%;
   }
+  .aboutContainer {
+    width: 100%;
+  }
+
+  .blockHeaderImg {
+    padding: 7rem;
+  }
   .mapContainer {
-    width: 10rem;
+    width: 800px;
+  }
+  .underMap {
+    font-size: 1.8rem;
+    margin-top: 1.5rem;
   }
   .aboutContent {
     display: flex;
     flex-direction: column;
   }
   .aboutHeader {
-    font-size: 5rem;
-    padding-bottom: 10rem;
+    font-size: 4rem;
+    padding-bottom: 5rem;
+  }
+  .HomeHeaderBlock {
+    height: 55rem;
+    border-radius: 7.5rem;
+  }
+  .HomeHeaderBlock p {
+    font-size: 2.5rem;
+  }
+  .HomeHeaderBlock h2 {
+    font-size: 4.2rem;
+  }
+  .HomeFooterDescription {
+    padding-top: 3rem;
+    text-align: left;
+  }
+  .HomeFooterDescriptionItem button {
+    width: 25rem;
+    height: 5rem;
+    font-size: 2rem;
+  }
+  .aboutSection {
+    margin-top: 7.5rem;
   }
 }
