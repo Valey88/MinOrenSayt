@@ -1,10 +1,27 @@
 import React from "react";
 import style from "./Home.module.css";
 import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "./styles.css";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "./styles.css";
+
+// import required modules
+import {
+  Navigation,
+  Pagination,
+  Autoplay,
+  Mousewheel,
+  Keyboard,
+} from "swiper/modules";
 const Home = ({ city, setCity }) => {
   return (
     <div className={style.Home}>
-      <div>
+      <div className={style.all}>
         <div className={style.HomeContainer}>
           <div className={style.HomeHeaderBlock}>
             <div className={style.blockHeaderImg}>
@@ -86,19 +103,64 @@ const Home = ({ city, setCity }) => {
           <div className={style.aboutHeader}>
             <h2>Карта мероприятий</h2>
           </div>
-          <YMaps>
-            <Map
-              defaultState={{ center: [51.763885, 55.119018], zoom: 18 }}
-              width={1430}
-              height={700}
-            >
-              <Placemark defaultGeometry={[51.763885, 55.119018]} />
-            </Map>
-          </YMaps>
-          ;
+          <div className={style.mapContainer}>
+            <YMaps>
+              <Map
+                defaultState={{ center: [51.763885, 55.119018], zoom: 18 }}
+                width={-1}
+                height={650}
+              >
+                <Placemark defaultGeometry={[51.763885, 55.119018]} />
+              </Map>
+            </YMaps>
+          </div>
+
           <div className={style.underMap}>
             <p>ДКиС “Газовик”</p>
-            <p>ОГАУ</p>
+          </div>
+        </div>
+        <div className={style.sliderSection}>
+          <div className={style.sliderContainer}>
+            <div className={style.aboutHeader}>
+              <h2>Галерея</h2>
+            </div>
+            <Swiper
+              slidesPerView={1}
+              spaceBetween={30}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              loop={true}
+              pagination={{
+                clickable: true,
+              }}
+              navigation={false}
+              modules={[Pagination, Navigation, Autoplay]}
+              className="mySwiper"
+            >
+              <SwiperSlide>
+                <img src="/public/image 17.png" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="/public/image 17.png" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="/public/image 17.png" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="/public/image 17.png" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="/public/image 17.png" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="/public/image 17.png" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="/public/image 17.png" />
+              </SwiperSlide>
+            </Swiper>
           </div>
         </div>
       </div>

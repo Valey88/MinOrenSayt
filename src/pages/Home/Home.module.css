@@ -156,8 +156,8 @@
 }
 .underMap {
   display: flex;
-  justify-content: space-between;
   font-size: 2rem;
+  margin-top: 2rem;
 }
 
 .map {
@@ -167,4 +167,40 @@
 
 [class*="copyrights-pane"] {
   display: none !important;
+}
+.mapSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}
+.mapContainer {
+  width: 143rem;
+}
+.sliderSection {
+  margin-bottom: 10rem;
+}
+
+@media (max-width: 1440px) {
+  .image {
+    width: 90rem;
+  }
+}
+@media (max-width: 1024px) {
+  .all {
+    width: 100%;
+  }
+  .mapContainer {
+    width: 10rem;
+  }
+  .aboutContent {
+    display: flex;
+    flex-direction: column;
+  }
+  .aboutHeader {
+    font-size: 5rem;
+    padding-bottom: 10rem;
+  }
 }

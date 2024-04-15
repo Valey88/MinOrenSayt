@@ -5,11 +5,9 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0 2rem;
   height: 7vw;
   background-color: Greyscale/Black 100;
   z-index: 1;
-  padding: 0 5rem;
 }
 .headerLogo {
   display: flex;
@@ -40,7 +38,7 @@
 }
 .headerNavItem a {
   font-size: 2rem;
-  font-weight:  bold;
+  font-weight: bold;
   color: #000854;
 }
 .headerMenu {
