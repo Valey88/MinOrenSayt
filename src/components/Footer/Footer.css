@@ -1,38 +1,63 @@
-@import url('https://fonts.cdnfonts.com/css/sunflower-highway');
+@import url("https://fonts.cdnfonts.com/css/sunflower-highway");
 
-footer{
-    display: flex;
-    border: 6px solid #69DB00;
-    background-color: white;
-    border-radius: 5rem;
-    justify-content: space-around;
-    align-items: center;
-    height: 30rem;
-    font-family: Sunflower Highway;
+footer {
+  display: flex;
+  border: 6px solid #69db00;
+  background-color: white;
+  border-radius: 5rem;
+  justify-content: space-around;
+  align-items: center;
+  height: 30rem;
+  font-family: Sunflower Highway;
 }
 
-footer a{
-    font-size: 2rem;
+footer a {
+  font-size: 2rem;
 }
 
-footer ul{
-    display: flex;
+footer ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contacts {
+  text-align: right;
+}
+
+.navigation {
+  text-align: left;
+}
+
+.net {
+  display: flex;
+  justify-content: end;
+  gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+  footer a {
+    font-size: 1.5rem;
+  }
+  footer {
     flex-direction: column;
-    gap: 2rem;
+    height: max-content;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .footerLogo {
+    width: 20rem;
+    padding-bottom: 1.5rem;
+  }
+  .contacts {
+    text-align: center;
+    padding-top: 1.5rem;
+    font-weight: bold;
+  }
+  .net {
+    justify-content: center;
+  }
+  footer ul{
+    text-align: center;
+  }
 }
-
-.contacts{
-    text-align: right;
-}
-
-.navigation{
-    text-align: left;
-}
-
-.net{
-    display: flex;
-    justify-content: end;
-    gap: 2rem;
-}
-
-@media (max-width: 1024px) {}

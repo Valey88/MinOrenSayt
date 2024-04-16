@@ -3,7 +3,7 @@ import "./Header.css";
 import { useState } from "react";
 import Modal from "../modal/Modal";
 
-export default function Header({city , setCity , rayon, setRayon}) {
+export default function Header({ city, setCity, rayon, setRayon }) {
   const [isOpen, setOpen] = useState(false);
 
   return (
@@ -34,7 +34,7 @@ export default function Header({city , setCity , rayon, setRayon}) {
           </ul>
         </nav>
         <div>
-          <Modal city={city} setCity={setCity} rayon={rayon} setRayon={setRayon}/>
+          {/* <Modal city={city} setCity={setCity} rayon={rayon} setRayon={setRayon}/> */}
         </div>
         <div className="headerMenu">
           <button onClick={() => setOpen(!isOpen)}>

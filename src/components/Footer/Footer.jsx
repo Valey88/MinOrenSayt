@@ -3,7 +3,7 @@ export default function Header() {
     return (
         <footer>
             <a href="">
-                <img src="/public/Logo.svg" alt=""></img>
+                <img className="footerLogo" src="/public/Logo.svg" alt=""></img>
             </a>
             <div className="navigation">
                 <ul>

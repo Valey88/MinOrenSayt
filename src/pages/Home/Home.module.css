@@ -176,7 +176,7 @@
 .mapContainer {
   width: 143rem;
 }
-.mapCenter {
+.Center {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -193,33 +193,11 @@
   }
 }
 @media (max-width: 1024px) {
-  .image {
-    width: 70rem;
-  }
   .HomeContainer {
     width: 100%;
   }
-  .aboutContainer {
-    width: 100%;
-  }
-
   .blockHeaderImg {
     padding: 7rem;
-  }
-  .mapContainer {
-    width: 800px;
-  }
-  .underMap {
-    font-size: 1.8rem;
-    margin-top: 1.5rem;
-  }
-  .aboutContent {
-    display: flex;
-    flex-direction: column;
-  }
-  .aboutHeader {
-    font-size: 4rem;
-    padding-bottom: 5rem;
   }
   .HomeHeaderBlock {
     height: 55rem;
@@ -240,7 +218,163 @@
     height: 5rem;
     font-size: 2rem;
   }
+  .aboutContainer {
+    width: 100%;
+  }
+  .aboutContent {
+    display: flex;
+    flex-direction: column;
+  }
+  .aboutHeader {
+    font-size: 4rem;
+    padding-bottom: 5rem;
+  }
   .aboutSection {
     margin-top: 7.5rem;
+  }
+  .image {
+    width: 70rem;
+  }
+  .mapContainer {
+    width: 800px;
+  }
+  .underMap {
+    font-size: 1.8rem;
+    margin-top: 1.5rem;
+  }
+}
+@media (max-width: 767px) {
+  .cards,
+  .cards :only-child {
+    width: 10rem;
+    height: 10rem;
+  }
+  .gerb,
+  .gerb :only-child {
+    width: 5rem;
+  }
+  .HomeHeaderDescription {
+    grid-gap: 1.5rem;
+    padding-left: 0rem;
+    justify-content: space-around;
+  }
+  .HomeHeaderBlock p {
+    font-size: 1.5rem;
+  }
+  .HomeHeaderBlock h2 {
+    font-size: 2.8rem;
+  }
+  .HomeHeaderBlock {
+    height: max-content;
+  }
+  .HomeFooterDescriptionItem button {
+    width: 15rem;
+    height: 4rem;
+    font-size: 1.5rem;
+  }
+  .blockHeaderImg {
+    padding: 4rem;
+  }
+  .aboutContentItem1 {
+    width: 45rem;
+    height: max-content;
+  }
+  .Item1 {
+    width: 45rem;
+    height: max-content;
+    font-size: 1.4rem;
+  }
+  .Item1 h2,
+  .Item2 h2,
+  .aboutContentItem1 h2 {
+    font-size: 2.7rem;
+  }
+  .Item1 p,
+  .Item2 p,
+  .aboutContentItem1 p {
+    font-size: 2.5rem;
+  }
+  .Item2 {
+    width: 45rem;
+    height: max-content;
+  }
+  .image {
+    width: 42rem;
+  }
+  .mapContainer {
+    width: 40rem;
+  }
+}
+@media (max-width: 500px) {
+  .HomeHeaderBlock{
+    border-radius: 4rem;
+  }
+  .blockHeaderImg {
+    padding: 1.5rem;
+  }
+  .cards,
+  .cards :only-child {
+    width: 8rem;
+    height: 8rem;
+  }
+  .gerb,
+  .gerb :only-child {
+    width: 4rem;
+  }
+  .HomeHeaderDescription {
+    grid-gap: 1.5rem;
+  }
+  .HomeHeaderBlock p {
+    font-size: 1.2rem;
+  }
+  .HomeHeaderBlock h2 {
+    font-size: 1.8rem;
+  }
+  .HomeHeaderBlock {
+    height: max-content;
+  }
+  .HomeFooterDescriptionItem button {
+    width: 13rem;
+    height: 2.5rem;
+    font-size: 1.2rem;
+  }
+  .aboutHeader {
+    font-size: 2.1rem;
+    padding-bottom: 3 rem;
+  }
+  .HomeFooterDescription{
+    padding-top: 1.5rem;
+  }
+  .image {
+    width: 30rem;
+  }
+  .aboutContent{
+    grid-gap: 7rem;
+  }
+  .aboutContentItem1 {
+    width: 32rem;
+    height: max-content;
+    border-radius: 6rem;
+    padding: 3.5rem;
+  }
+  .Item1,
+  .Item2 {
+    width: 32rem;
+    height: max-content;
+    padding: 4rem;
+    border-radius: 5rem;
+  }
+  .Item1 h2,
+  .Item2 h2,
+  .aboutContentItem1 h2 {
+    font-size: 2rem;
+  }
+  .Item1 p,
+  .Item2 p,
+  .aboutContentItem1 p {
+    font-size: 1.5rem;
+  }
+  .mapContainer {
+    width: 30rem;
   }
 }

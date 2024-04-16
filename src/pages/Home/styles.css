@@ -46,3 +46,14 @@ body {
     height: 55rem;
   }
 }
+@media (max-width: 767px) {
+  .swiper {
+    width: 40rem;
+  }
+}
+@media (max-width: 500px) {
+  .swiper {
+    width: 30rem;
+    height: 45rem;
+  }
+}
