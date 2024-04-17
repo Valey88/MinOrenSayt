@@ -163,7 +163,12 @@
 }
 .programmSection {
   width: 100%;
-  margin-top: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
 }
 .programmContainer {
   width: 143rem;
@@ -193,7 +198,6 @@
   flex-direction: row;
   justify-content: end;
   align-items: end;
-  
 }
 .programmContentInfo1 {
   width: 60rem;
@@ -333,6 +337,50 @@
   }
 }
 @media (max-width: 1024px) {
+   .programmFooter{
+    padding-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .programmContentInfo1{
+    width: 60rem;
+    height: 17rem;
+    border-radius: 5rem;
+  }
+  .programmContentInfo2{
+    width: 60rem;
+    height: 17rem;
+    border-radius: 5rem;
+  }.programmContentInfo3{
+    width: 60rem;
+    height: 17rem;
+    border-radius: 5rem;
+  }.programmContentInfo4{
+    width: 60rem;
+    height: 17rem;
+    border-radius: 5rem;
+  }.programmContentInfo5{
+    width: 60rem;
+    height: 17rem;
+    border-radius: 5rem;
+  }
+  .programmHeader{
+  display: flex;
+  justify-content: left;
+  font-size: 3.5rem;
+  padding-bottom: 8rem;
+  }
+  .programmContentInfo1Text h3{
+    font-size: 3.75rem;
+  }
+  .programmContainer{
+    width: 100%;
+  }
+  .programmContent{
+    display: flex;
+    flex-direction: column;
+  }
   .HomeContainer {
     width: 100%;
   }
@@ -384,6 +432,31 @@
   }
 }
 @media (max-width: 767px) {
+  .programmContentInfo1Text h3{
+    font-size: 3rem;
+  }
+  .programmContentInfo1{
+    width: 43rem;
+    height: 14rem;
+    border-radius: 5rem;
+  }
+  .programmContentInfo2{
+    width: 43rem;
+    height: 14rem;
+    border-radius: 5rem;
+  }.programmContentInfo3{
+    width: 43rem;
+    height: 14rem;
+    border-radius: 5rem;
+  }.programmContentInfo4{
+    width: 43rem;
+    height: 14rem;
+    border-radius: 5rem;
+  }.programmContentInfo5{
+    width: 43rem;
+    height: 14rem;
+    border-radius: 5rem;
+  }
   .cards,
   .cards :only-child {
     width: 10rem;
@@ -446,6 +519,51 @@
   }
 }
 @media (max-width: 500px) {
+  .programmHeader{
+    display: flex;
+    justify-content: left;
+    font-size: 2.75rem;
+    padding-bottom: 8rem;
+    }
+  .programmContentInfo1Text h3{
+    font-size: 2.25rem;
+  }
+  .programmContentInfo1{
+    width: 30rem;
+    height: 12rem;
+    border-radius: 5rem;
+  }
+  .programmContentInfo2{
+    width: 30rem;
+    height: 12rem;
+    border-radius: 5rem;
+  }.programmContentInfo3{
+    width: 30rem;
+    height: 12rem;
+    border-radius: 5rem;
+  }.programmContentInfo4{
+    width: 30rem;
+    height: 12rem;
+    border-radius: 5rem;
+  }.programmContentInfo5{
+    width: 30rem;
+    height: 12rem;
+    border-radius: 5rem;
+  }
+  .programmFooter button{
+    width: 24rem;
+    height: 8rem;
+    font-size: 2rem;
+  }
+  .programmContent{
+     grid-gap: 5rem;
+  }
+  .programmContentLeft{
+    grid-gap: 5rem;
+  }
+  .programmContentRight{
+    grid-gap: 5rem;
+  }
   .HomeHeaderBlock{
     border-radius: 4rem;
   }
