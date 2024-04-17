@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap");
+*{
+  font-family: "Inter Tight", sans-serif;
+}
 .Home {
   width: 100%;
   display: flex;
@@ -157,6 +161,142 @@
 .Item2 p {
   font-size: 2.5rem;
 }
+.programmSection {
+  width: 100%;
+  margin-top: 15rem;
+}
+.programmContainer {
+  width: 143rem;
+}
+.programmHeader {
+  display: flex;
+  justify-content: left;
+  font-size: 6.5rem;
+  padding-bottom: 10rem;
+}
+.programmContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-gap: 10rem;
+}
+.programmContentLeft {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  grid-gap: 7rem;
+}
+
+.programmContentBlock1{
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: end;
+  
+}
+.programmContentInfo1 {
+  width: 60rem;
+  height: 22.5rem;
+  background: linear-gradient(140.97deg, #e1f3ff -2.2%, #b9e2ff 93.67%);
+  border-radius: 7rem;
+  padding: 5rem 2rem 5rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+
+}
+.programmContentInfo2{
+  width: 60rem;
+  height: 22.5rem;
+  background: linear-gradient(140.97deg, #e1f3ff -2.2%, #b9e2ff 93.67%);
+  border-radius: 7rem;
+  padding: 5rem 2rem 5rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  background: linear-gradient(90deg, rgba(210, 74, 67, 0.5) 0%, #F34037 100%);
+}
+  
+.programmContentInfo1Text {
+  white-space: pre-line;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.programmContentInfo1Text>h3{
+  font-size: 4.75rem;
+}
+.programmContentButton {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 14rem;
+}
+.programmButton{
+  background-color: transparent;
+  width: 13rem;
+  height: 6rem;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+.programmContentRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  grid-gap: 7rem;
+}
+.programmContentInfo3 {
+  width: 60rem;
+  height: 22.5rem;
+  background: linear-gradient(89.98deg, rgba(252, 222, 68, 0.24) 38.36%, #FCDE44 99.98%);
+  border-radius: 7rem;
+  padding: 5rem 2rem 5rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.programmContentInfo4 {
+  width: 60rem;
+  height: 22.5rem;
+  background: linear-gradient(90deg, rgba(105, 219, 0, 0.31) 31.29%, #69DB00 118.71%);
+  border-radius: 7rem;
+  padding: 5rem 2rem 5rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}.programmContentInfo5 {
+  width: 60rem;
+  height: 22.5rem;
+  background: linear-gradient(89.98deg, rgba(78, 137, 251, 0.33) 29.34%, #4E89FB 99.98%);
+  border-radius: 7rem;
+  padding: 5rem 2rem 5rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.programmFooter{
+  padding-top: 5rem;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+}
+.programmFooter>button{
+  font-family: "Inter Tight", sans-serif;
+  font-size: 3.5rem;
+  height: 10rem;
+  width: 35rem;
+  border-radius: 14rem;
+  margin-right: 2.75rem;
+  color: black;
+}
+
+
 
 .underMap {
   font-size: 3rem;

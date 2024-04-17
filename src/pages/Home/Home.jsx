@@ -102,6 +102,72 @@ const Home = ({ city, setCity }) => {
             </div>
           </div>
         </div>
+        <div className={style.programmSection}>
+            <div className={style.programmContainer}>
+              <div className={style.programmHeader}>
+                <h2>Программа мероприятий</h2>
+              </div>
+              <div className={style.programmContent}>
+                <div className={style.programmContentLeft}>
+                  <div className={style.programmContentBlock1}>
+                    <div className={style.programmContentInfo1}>
+                      <div className={style.programmContentInfo1Text}>
+                        <h3>Большой театрально-концертный зал</h3>  
+                      </div>
+                  </div>
+                  <div className={style.programmContentButton}>
+                  <button className={style.programmButton}> <img src="add_circle.svg" alt=""width={40}/></button>
+                  </div>
+                  </div>
+                  <div className={style.programmContentBlock1}>
+                  <div className={style.programmContentInfo2}>
+                    <div className={style.programmContentInfo1Text}>
+                      <h3>Зимний сад</h3>
+                    </div>
+                  </div>
+                  <div className={style.programmContentButton}>
+                    <button className={style.programmButton}> <img src="add_circle.svg" alt="" width={40}/></button>
+                </div>
+              </div>
+            </div>
+            <div className={style.programmContentRight}>
+            <div className={style.programmContentBlock1}>
+                    <div className={style.programmContentInfo3}>
+                      <div className={style.programmContentInfo1Text}>
+                        <h3>Открытая площадка ДКиС «Газовик»</h3>  
+                      </div>
+                  </div>
+                  <div className={style.programmContentButton}>
+                  <button className={style.programmButton}> <img src="add_circle.svg" alt=""width={40}/></button>
+                  </div>
+                  </div>
+                 <div className={style.programmContentBlock1}>
+                  <div className={style.programmContentInfo4}>
+                    <div className={style.programmContentInfo1Text}>
+                      <h3>Зал совещаний</h3>
+                    </div>
+                  </div>
+                  <div className={style.programmContentButton}>
+                    <button className={style.programmButton}> <img src="add_circle.svg" alt="" width={40}/></button>
+                </div>
+              </div>
+            <div className={style.programmContentBlock1}>
+                <div className={style.programmContentInfo5}>
+                  <div className={style.programmContentInfo1Text}>
+                      <h3>Малый театрально-концертный зал</h3>
+                  </div>
+                </div>
+                  <div className={style.programmContentButton}>
+                    <button className={style.programmButton}> <img src="add_circle.svg" alt="" width={40}/></button>
+                  </div> 
+                </div>
+              </div>
+            </div>
+            <div className={style.programmFooter}>
+              <button>регистрация</button>
+            </div>
+          </div>
+        </div>
         <div className={style.mapSection}>
           <div className={style.aboutHeader}>
             <h2>Карта мероприятий</h2>
