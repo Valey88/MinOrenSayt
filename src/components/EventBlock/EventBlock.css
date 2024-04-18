@@ -1,0 +1,100 @@
+.programmContentBlock {
+  display: flex;
+  align-items: end;
+
+  &.blue {
+    .programmContentInfo {
+      background: linear-gradient(140.97deg, #e1f3ff -2.2%, #b9e2ff 93.67%);
+    }
+  }
+  &.red {
+    .programmContentInfo {
+      background: linear-gradient(
+        90deg,
+        rgba(210, 74, 67, 0.5) 0%,
+        #f34037 100%
+      );
+    }
+  }
+  &.green {
+    .programmContentInfo {
+      background: linear-gradient(
+        89.98deg,
+        rgba(252, 222, 68, 0.24) 38.36%,
+        #fcde44 99.98%
+      );
+    }
+  }
+  &.yellow {
+    .programmContentInfo {
+      background: linear-gradient(
+        90deg,
+        rgba(105, 219, 0, 0.31) 31.29%,
+        #69db00 118.71%
+      );
+    }
+  }
+  &.darkblue {
+    .programmContentInfo {
+      background: linear-gradient(
+        89.98deg,
+        rgba(78, 137, 251, 0.33) 29.34%,
+        #4e89fb 99.98%
+      );
+    }
+  }
+}
+.programmContentInfo {
+  width: 60rem;
+  height: 22.5rem;
+  border-radius: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.programmContentInfo h2 {
+  font-size: 4.5rem;
+}
+.programmContentButton {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.programmButton {
+  background-color: transparent;
+  width: 13rem;
+  height: 6rem;
+  cursor: pointer;
+}
+@media (max-width: 1024px) {
+  .programmContentInfo {
+    height: 20rem;
+  }
+  .programmContentInfo h2 {
+    font-size: 3.75rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .programmContentInfo h2 {
+    font-size: 3rem;
+  }
+  .programmContentInfo {
+    width: 43rem;
+    height: 14rem;
+    border-radius: 5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .programmContentInfo h2 {
+    font-size: 2rem;
+  }
+  .programmContentInfo {
+    width: 30rem;
+    height: 12rem;
+    border-radius: 5rem;
+  }
+}

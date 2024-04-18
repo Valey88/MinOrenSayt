@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap");
-*{
+* {
   font-family: "Inter Tight", sans-serif;
 }
 .Home {
@@ -161,86 +161,22 @@
 .Item2 p {
   font-size: 2.5rem;
 }
+
 .programmSection {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   margin-top: 10rem;
   margin-bottom: 10rem;
 }
-.programmContainer {
-  width: 143rem;
-}
-.programmHeader {
-  display: flex;
-  justify-content: left;
-  font-size: 6.5rem;
-  padding-bottom: 10rem;
-}
 .programmContent {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   grid-gap: 10rem;
 }
-.programmContentLeft {
+.programmColumn {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   grid-gap: 7rem;
 }
-
-.programmContentBlock1{
-  display: flex;
-  flex-direction: row;
-  justify-content: end;
-  align-items: end;
-}
-.programmContentInfo1 {
-  width: 60rem;
-  height: 22.5rem;
-  background: linear-gradient(140.97deg, #e1f3ff -2.2%, #b9e2ff 93.67%);
-  border-radius: 7rem;
-  padding: 5rem 2rem 5rem 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: start;
-
-}
-.programmContentInfo2{
-  width: 60rem;
-  height: 22.5rem;
-  background: linear-gradient(140.97deg, #e1f3ff -2.2%, #b9e2ff 93.67%);
-  border-radius: 7rem;
-  padding: 5rem 2rem 5rem 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  background: linear-gradient(90deg, rgba(210, 74, 67, 0.5) 0%, #F34037 100%);
-}
-  
-.programmContentInfo1Text {
-  white-space: pre-line;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.programmContentInfo1Text>h3{
-  font-size: 4.75rem;
-}
-.programmContentButton {
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  grid-gap: 14rem;
-}
-.programmButton{
+.programmButton {
   background-color: transparent;
   width: 13rem;
   height: 6rem;
@@ -248,49 +184,13 @@
   margin: 0;
   padding: 0;
 }
-.programmContentRight {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  grid-gap: 7rem;
-}
-.programmContentInfo3 {
-  width: 60rem;
-  height: 22.5rem;
-  background: linear-gradient(89.98deg, rgba(252, 222, 68, 0.24) 38.36%, #FCDE44 99.98%);
-  border-radius: 7rem;
-  padding: 5rem 2rem 5rem 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: start;
-}
-.programmContentInfo4 {
-  width: 60rem;
-  height: 22.5rem;
-  background: linear-gradient(90deg, rgba(105, 219, 0, 0.31) 31.29%, #69DB00 118.71%);
-  border-radius: 7rem;
-  padding: 5rem 2rem 5rem 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: start;
-}.programmContentInfo5 {
-  width: 60rem;
-  height: 22.5rem;
-  background: linear-gradient(89.98deg, rgba(78, 137, 251, 0.33) 29.34%, #4E89FB 99.98%);
-  border-radius: 7rem;
-  padding: 5rem 2rem 5rem 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: start;
-}
-.programmFooter{
+.programmFooter {
   padding-top: 5rem;
   display: flex;
   justify-content: end;
   align-items: end;
 }
-.programmFooter>button{
+.programmFooter > button {
   font-family: "Inter Tight", sans-serif;
   font-size: 3.5rem;
   height: 10rem;
@@ -299,8 +199,6 @@
   margin-right: 2.75rem;
   color: black;
 }
-
-
 
 .underMap {
   font-size: 3rem;
@@ -337,47 +235,13 @@
   }
 }
 @media (max-width: 1024px) {
-   .programmFooter{
+  .programmFooter {
     padding-top: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .programmContentInfo1{
-    width: 60rem;
-    height: 17rem;
-    border-radius: 5rem;
-  }
-  .programmContentInfo2{
-    width: 60rem;
-    height: 17rem;
-    border-radius: 5rem;
-  }.programmContentInfo3{
-    width: 60rem;
-    height: 17rem;
-    border-radius: 5rem;
-  }.programmContentInfo4{
-    width: 60rem;
-    height: 17rem;
-    border-radius: 5rem;
-  }.programmContentInfo5{
-    width: 60rem;
-    height: 17rem;
-    border-radius: 5rem;
-  }
-  .programmHeader{
-  display: flex;
-  justify-content: left;
-  font-size: 3.5rem;
-  padding-bottom: 8rem;
-  }
-  .programmContentInfo1Text h3{
-    font-size: 3.75rem;
-  }
-  .programmContainer{
-    width: 100%;
-  }
-  .programmContent{
+  .programmContent {
     display: flex;
     flex-direction: column;
   }
@@ -432,31 +296,6 @@
   }
 }
 @media (max-width: 767px) {
-  .programmContentInfo1Text h3{
-    font-size: 3rem;
-  }
-  .programmContentInfo1{
-    width: 43rem;
-    height: 14rem;
-    border-radius: 5rem;
-  }
-  .programmContentInfo2{
-    width: 43rem;
-    height: 14rem;
-    border-radius: 5rem;
-  }.programmContentInfo3{
-    width: 43rem;
-    height: 14rem;
-    border-radius: 5rem;
-  }.programmContentInfo4{
-    width: 43rem;
-    height: 14rem;
-    border-radius: 5rem;
-  }.programmContentInfo5{
-    width: 43rem;
-    height: 14rem;
-    border-radius: 5rem;
-  }
   .cards,
   .cards :only-child {
     width: 10rem;
@@ -519,52 +358,15 @@
   }
 }
 @media (max-width: 500px) {
-  .programmHeader{
-    display: flex;
-    justify-content: left;
-    font-size: 2.75rem;
-    padding-bottom: 8rem;
-    }
-  .programmContentInfo1Text h3{
-    font-size: 2.25rem;
+  .programmColumn, .programmContent {
+    grid-gap: 3rem;
   }
-  .programmContentInfo1{
-    width: 30rem;
-    height: 12rem;
-    border-radius: 5rem;
+  .programmFooter button {
+    width: 20rem;
+    height: 5rem;
+    font-size: 1.8rem;
   }
-  .programmContentInfo2{
-    width: 30rem;
-    height: 12rem;
-    border-radius: 5rem;
-  }.programmContentInfo3{
-    width: 30rem;
-    height: 12rem;
-    border-radius: 5rem;
-  }.programmContentInfo4{
-    width: 30rem;
-    height: 12rem;
-    border-radius: 5rem;
-  }.programmContentInfo5{
-    width: 30rem;
-    height: 12rem;
-    border-radius: 5rem;
-  }
-  .programmFooter button{
-    width: 24rem;
-    height: 8rem;
-    font-size: 2rem;
-  }
-  .programmContent{
-     grid-gap: 5rem;
-  }
-  .programmContentLeft{
-    grid-gap: 5rem;
-  }
-  .programmContentRight{
-    grid-gap: 5rem;
-  }
-  .HomeHeaderBlock{
+  .HomeHeaderBlock {
     border-radius: 4rem;
   }
   .blockHeaderImg {
@@ -600,13 +402,13 @@
     font-size: 2.1rem;
     padding-bottom: 3 rem;
   }
-  .HomeFooterDescription{
+  .HomeFooterDescription {
     padding-top: 1.5rem;
   }
   .image {
     width: 30rem;
   }
-  .aboutContent{
+  .aboutContent {
     grid-gap: 7rem;
   }
   .aboutContentItem1 {
