@@ -204,7 +204,11 @@
   font-size: 3rem;
   margin-top: 2rem;
 }
-[class*="copyrights-pane"] {
+
+[class*="ymaps-2-1-79-copyright ymaps-2-1-79-copyright_logo_no"] {
+  display: none !important;
+}
+[class*="ymaps-2-1-79-gototech"] {
   display: none !important;
 }
 .mapSection {
@@ -358,7 +362,8 @@
   }
 }
 @media (max-width: 500px) {
-  .programmColumn, .programmContent {
+  .programmColumn,
+  .programmContent {
     grid-gap: 3rem;
   }
   .programmFooter button {

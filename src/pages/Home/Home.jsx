@@ -186,7 +186,6 @@ const Home = ({ city, setCity }) => {
                     }}
                     defaultGeometry={[51.760786, 55.112532]}
                   />
-                  <RouteButton options={{ float: "right" }} />
                 </Map>
               </YMaps>
             </div>
