@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./Home.module.css";
-import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
+import {RouteButton, YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./styles.css";
 
@@ -175,14 +175,19 @@ const Home = ({ city, setCity }) => {
           <div className={style.Center}>
             <div className={style.mapContainer}>
               <YMaps>
-                <Map
-                  defaultState={{ center: [51.763885, 55.119018], zoom: 18 }}
-                  width={-1}
-                  height={650}
-                >
-                  <Placemark defaultGeometry={[51.763885, 55.119018]} />
-                </Map>
-              </YMaps>
+                  <Map
+                    defaultState={{ center: [51.762413, 55.116350], zoom: 17 }}
+                    width={-1}
+                    height={650}
+                  >
+                    <Placemark options={{iconLayout: 'default#image', iconImageHref: '/public/logoMark.svg', iconImageSize: [60, 60], iconImageOffset: [-30 , -60]}} defaultGeometry={[51.763885, 55.119018]} />
+                    
+                    <Placemark options={{iconLayout: 'default#image', iconImageHref: '/public/logoMark.svg', iconImageSize: [60, 60], iconImageOffset: [-30, -60]}} defaultGeometry={[51.763149, 55.115344]} />
+                    <Placemark options={{iconLayout: 'default#image', iconImageHref: '/public/logoMark.svg', iconImageSize: [60, 60], iconImageOffset: [-30, -55]}}defaultGeometry={[51.762709, 55.111921]} />
+                    <Placemark options={{iconLayout: 'default#image', iconImageHref: '/public/logoMark.svg', iconImageSize: [60, 60], iconImageOffset: [-2, -70]}} defaultGeometry={[51.760786, 55.112532]} />
+                    <RouteButton options={{ float: "right" }}/>
+                  </Map>
+                </YMaps>
             </div>
             <div className={style.underMap}>
               <p>ДКиС “Газовик”</p>
