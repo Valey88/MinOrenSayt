@@ -44,11 +44,11 @@ const Home = ({ city, setCity }) => {
               </div>
               <div className={style.HomeFooterDescription}>
                 <div className={style.HomeFooterDescriptionItem}>
-                  <h2>Форум труда в</h2>
+                  <h2>Форум труда</h2>
                   <button>Принять участие</button>
                 </div>
                 <div>
-                  <h2>Оренбургской области</h2>
+                  <h2>Живи и работай в Оренбуржье!</h2>
                 </div>
               </div>
             </div>
