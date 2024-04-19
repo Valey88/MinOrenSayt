@@ -27,16 +27,17 @@ export default function Footer() {
       <div className="contacts">
         <ul>
           <li>
-            <a href="mailto:forumtrudaoren@mail.ru">forumtrudaoren@mail.ru</a>
+            <a href="socp@mail.orb.ru">socp@mail.orb.ru</a>
           </li>
           <li>
-            <a href="tel:++7 9242 242 242">+7 9242 242 242</a>
+            <a href="tel:+73532770147">+7 (3532) 770147</a><br/>
+            <a href="tel:48-51-78">48-51-78</a>
           </li>
           <li className="net">
-            <a href="">
+            <a href="https://t.me/orenmintrud" target="_blank">
               <img src="/public/telegram.svg" alt=""></img>
             </a>
-            <a href="">
+            <a href="https://m.vk.ru/mintruda56?ref=group_qr" target="_blank">
               <img src="/public/vk.svg" alt=""></img>
             </a>
           </li>
