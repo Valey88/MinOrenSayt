@@ -6,9 +6,9 @@ export default function EventBlock({ color, children }) {
         <h2>{children}</h2>
       </div>
       <div className="programmContentButton">
-        <button className="programmButton">
+        <a className="programmButton" href="\public\Архитектура Форума ОК_2.docx">
           <img src="add_circle.svg" alt="" width={40} />
-        </button>
+        </a>
       </div>
     </div>
   );
