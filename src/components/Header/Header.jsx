@@ -11,7 +11,7 @@ export default function Header({ city, setCity, rayon, setRayon }) {
       <header className="header">
         <div className="headerLogo">
           <Link to="/">
-            <img src="/public/С„РёРЅР°Р»СЊРЅРѕРµ_Р»РѕРіРѕ.png" alt="" />
+            <img src="/public/Logo.svg" alt="" />
           </Link>
         </div>
         <nav
@@ -38,7 +38,7 @@ export default function Header({ city, setCity, rayon, setRayon }) {
         </div>
         <div className="headerMenu">
           <button onClick={() => setOpen(!isOpen)}>
-            <img src="/public/Category.svg" width={40} height={40} alt="" />
+            <img src="/public/Hamburger.svg" width={40} height={40} alt="" />
           </button>
         </div>
       </header>

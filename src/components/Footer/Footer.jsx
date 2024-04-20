@@ -30,7 +30,8 @@ export default function Footer() {
             <a href="socp@mail.orb.ru">socp@mail.orb.ru</a>
           </li>
           <li>
-            <a href="tel:+73532770147">+7 (3532) 770147</a><br/>
+            <a href="tel:+73532770147">+7 (3532) 770147</a>
+            <br />
             <a href="tel:48-51-78">48-51-78</a>
           </li>
           <li className="net">

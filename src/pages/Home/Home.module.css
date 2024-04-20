@@ -2,15 +2,30 @@
 * {
   font-family: "Inter Tight", sans-serif;
 }
+.all {
+  width: 100%;
+}
+.Center {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
 .Home {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.all {
-  width: 100%;
+.heading {
+  display: flex;
+  justify-content: space-between;
+  font-size: 8rem;
+  padding-bottom: 8rem;
 }
+
+/* * Home section * */
 .HomeContainer {
   width: 143rem;
 }
@@ -78,18 +93,15 @@
   font-weight: bold;
   background-color: #fff;
 }
+/* * Home section * */
+
+/* * About section * */
 .aboutSection {
   width: 100%;
   margin-top: 15rem;
 }
 .aboutContainer {
   width: 143rem;
-}
-.aboutHeader {
-  display: flex;
-  justify-content: left;
-  font-size: 8rem;
-  padding-bottom: 10rem;
 }
 .aboutContent {
   display: flex;
@@ -161,22 +173,24 @@
 .Item2 p {
   font-size: 2.5rem;
 }
+/* * About section * */
 
-.programmSection {
+/* * Event section * */
+.eventSection {
   margin-top: 10rem;
-  margin-bottom: 10rem;
 }
-.programmContent {
+.eventContent {
   display: flex;
   align-items: center;
   grid-gap: 10rem;
 }
-.programmColumn {
+.eventColumn {
   display: flex;
   flex-direction: column;
-  grid-gap: 7rem;
+  align-items: center;
+  grid-gap: 5rem;
 }
-.programmButton {
+.eventButton {
   background-color: transparent;
   width: 13rem;
   height: 6rem;
@@ -184,33 +198,9 @@
   margin: 0;
   padding: 0;
 }
-.programmFooter {
-  padding-top: 5rem;
-  display: flex;
-  justify-content: end;
-  align-items: end;
-}
-.programmFooter > button {
-  font-family: "Inter Tight", sans-serif;
-  font-size: 3.5rem;
-  height: 10rem;
-  width: 35rem;
-  border-radius: 14rem;
-  margin-right: 2.75rem;
-  color: black;
-}
+/* * Event section * */
 
-.underMap {
-  font-size: 3rem;
-  margin-top: 2rem;
-}
-
-[class*="ymaps-2-1-79-copyright ymaps-2-1-79-copyright_logo_no"] {
-  display: none !important;
-}
-[class*="ymaps-2-1-79-gototech"] {
-  display: none !important;
-}
+/* * Map section * */
 .mapSection {
   width: 100%;
   display: flex;
@@ -222,16 +212,27 @@
 .mapContainer {
   width: 143rem;
 }
-.Center {
+.underMap {
+  font-size: 3rem;
+  margin-top: 2rem;
+  width: 80%;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
+  justify-content: space-between;
 }
+
+[class*="ymaps-2-1-79-copyright ymaps-2-1-79-copyright_logo_no"] {
+  display: none !important;
+}
+[class*="ymaps-2-1-79-gototech"] {
+  display: none !important;
+}
+/* * Map section * */
+
+/* * Slider section * */
 .sliderSection {
   margin-bottom: 10rem;
 }
+/* * Slider section * */
 
 @media (max-width: 1440px) {
   .image {
@@ -239,15 +240,10 @@
   }
 }
 @media (max-width: 1024px) {
-  .programmFooter {
-    padding-top: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .programmContent {
+  .eventContent {
     display: flex;
     flex-direction: column;
+    grid-gap: 5rem;
   }
   .HomeContainer {
     width: 100%;
@@ -281,7 +277,7 @@
     display: flex;
     flex-direction: column;
   }
-  .aboutHeader {
+  .heading {
     font-size: 4rem;
     padding-bottom: 5rem;
   }
@@ -300,6 +296,12 @@
   }
 }
 @media (max-width: 767px) {
+  .eventList {
+    width: 25rem;
+  }
+  .heading {
+    font-size: 3.5rem;
+  }
   .cards,
   .cards :only-child {
     width: 10rem;
@@ -324,14 +326,13 @@
     height: max-content;
   }
   .HomeFooterDescription {
-    padding: 2rem 4rem
+    padding: 2rem 4rem;
   }
   .HomeFooterDescriptionItem button {
     width: 15rem;
     height: 4rem;
     font-size: 1.5rem;
   }
-  
   .blockHeaderImg {
     padding: 4rem;
   }
@@ -366,14 +367,9 @@
   }
 }
 @media (max-width: 500px) {
-  .programmColumn,
-  .programmContent {
+  .eventColumn,
+  .eventContent {
     grid-gap: 3rem;
-  }
-  .programmFooter button {
-    width: 20rem;
-    height: 5rem;
-    font-size: 1.8rem;
   }
   .HomeHeaderBlock {
     border-radius: 4rem;
@@ -407,7 +403,7 @@
     height: 2.5rem;
     font-size: 1.2rem;
   }
-  .aboutHeader {
+  .heading {
     font-size: 2.1rem;
     padding-bottom: 3 rem;
   }

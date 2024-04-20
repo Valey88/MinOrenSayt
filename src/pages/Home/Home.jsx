@@ -19,6 +19,7 @@ import {
   Mousewheel,
   Keyboard,
 } from "swiper/modules";
+import { Modal } from "@mui/material";
 
 const Home = ({ city, setCity }) => {
   return (
@@ -29,10 +30,10 @@ const Home = ({ city, setCity }) => {
             <div className={style.HomeHeaderBlock}>
               <div className={style.blockHeaderImg}>
                 <div className={style.cards}>
-                  <img src="/public/2 3 (1).png" alt="" />
+                  <img src="/public/badge.png" alt="" />
                 </div>
                 <div className={style.gerb}>
-                  <img src="/public/image 15 (1).png" alt="" />
+                  <img src="/public/emblem.png" alt="" />
                 </div>
               </div>
               <div className={style.HomeHeaderDescription}>
@@ -55,11 +56,11 @@ const Home = ({ city, setCity }) => {
           </div>
         </div>
         <div className={style.aboutSection}>
-          <div className={style.aboutContainer}>
-            <div className={style.aboutHeader}>
-              <h2>Цели форума</h2>
-            </div>
-            <div className={style.Center}>
+          <div className={style.heading}>
+            <h2>Цели форума</h2>
+          </div>
+          <div className={style.Center}>
+            <div className={style.aboutContainer}>
               <div className={style.aboutContent}>
                 <div className={style.aboutContentItem1}>
                   <div>
@@ -96,7 +97,7 @@ const Home = ({ city, setCity }) => {
                       </div>
                       <img
                         className={style.image}
-                        src="/public/РЎР»РѕР№_13.png"
+                        src="/public/aboutImage.svg"
                         alt=""
                       />
                     </div>
@@ -106,8 +107,9 @@ const Home = ({ city, setCity }) => {
             </div>
           </div>
         </div>
-        <div className={style.programmSection}>
-          <div className={style.aboutHeader}>
+
+        {/* <div className={style.eventSection}>
+          <div className={style.heading}>
             <h2>Программа мероприятий</h2>
           </div>
           <div className={style.Center}>
@@ -137,18 +139,46 @@ const Home = ({ city, setCity }) => {
               </div>
             </div>
           </div>
+        </div> */}
+
+        <div className={style.eventSection}>
+          <div className={style.heading}>
+            <h2>Мероприятия</h2>
+          </div>
+          <div className={style.Center}>
+            <div className={style.eventContainer}>
+              <div className={style.eventContent}>
+                <div className={style.eventColumn}>
+                  <EventBlock
+                    color="blue"
+                    eventList="\public\Мероприятия ДКиС «Газовик».docx"
+                  >
+                    ДКиС «Газовик»
+                  </EventBlock>
+                  <EventBlock
+                    color="red"
+                    eventList="\public\Мероприятия ОГАУ.docx"
+                  >
+                    Город профессий (ОГАУ)
+                  </EventBlock>
+                  <button>Регистрация</button>
+                </div>
+                <img className={style.eventList} src="\public\EventList.svg" />
+              </div>
+            </div>
+          </div>
         </div>
         <div className={style.mapSection}>
-          <div className={style.aboutHeader}>
+          <div className={style.heading}>
             <h2>Карта мероприятий</h2>
           </div>
           <div className={style.Center}>
             <div className={style.mapContainer}>
               <YMaps>
                 <Map
-                  defaultState={{ center: [51.762413, 55.11635], zoom: 17 }}
+                  defaultState={{ center: [51.762413, 55.11635], zoom: 16 }}
                   width={-1}
-                  height={650}
+                  height={600}
                 >
                   <Placemark
                     options={{
@@ -190,12 +220,13 @@ const Home = ({ city, setCity }) => {
               </YMaps>
             </div>
             <div className={style.underMap}>
+              <p>ОГАУ</p>
               <p>ДКиС “Газовик”</p>
             </div>
           </div>
         </div>
         <div className={style.sliderSection}>
-          <div className={style.aboutHeader}>
+          <div className={style.heading}>
             <h2>Галерея</h2>
           </div>
           <div className={style.sliderContainer}>
