@@ -31,10 +31,23 @@ export default function Header({ city, setCity, rayon, setRayon }) {
             <li className="headerNavItem">
               <Link to="https://t.me/coworking_orgmu">Галерея</Link>
             </li>
+            <li className="headerNavBtn">
+              <Modal
+                city={city}
+                setCity={setCity}
+                rayon={rayon}
+                setRayon={setRayon}
+              />
+            </li>
           </ul>
         </nav>
-        <div>
-          {/* <Modal city={city} setCity={setCity} rayon={rayon} setRayon={setRayon}/> */}
+        <div className="regBtn">
+          <Modal
+            city={city}
+            setCity={setCity}
+            rayon={rayon}
+            setRayon={setRayon}
+          />
         </div>
         <div className="headerMenu">
           <button onClick={() => setOpen(!isOpen)}>

@@ -102,7 +102,7 @@ export default function BasicModal({ city, setCity, rayon, setRayon }) {
                   <h2>Регистрация участников</h2>
                 </div>
                 <div className={styles.modalItemInput}>
-                  <img src="/public/Profile.svg" alt="" />
+                  <img src="/public/User.svg" alt="" />
                   <input
                     className={styles.modalInput}
                     type="text"
@@ -120,7 +120,7 @@ export default function BasicModal({ city, setCity, rayon, setRayon }) {
                   />
                 </div>
                 <div className={styles.modalItemInput}>
-                  <img src="/public/Mail.svg" alt="" />
+                  <img src="/public/Phone.svg" alt="" />
                   <input
                     className={styles.modalInput}
                     type="text"
@@ -129,7 +129,7 @@ export default function BasicModal({ city, setCity, rayon, setRayon }) {
                   />
                 </div>
                 <div className={styles.modalItemInput}>
-                  <img src="/public/people.svg" alt="" />
+                  <img src="/public/Group.svg" alt="" />
                   <input
                     className={styles.modalInput}
                     placeholder="Организация"
@@ -138,7 +138,7 @@ export default function BasicModal({ city, setCity, rayon, setRayon }) {
                   />
                 </div>
                 <div className={styles.modalItemInput}>
-                  <img src="/public/people.svg" alt="" />
+                  <img src="/public/Stuff.svg" alt="" />
                   <input
                     className={styles.modalInput}
                     placeholder="Должность"
