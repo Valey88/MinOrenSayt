@@ -20,16 +20,19 @@ const style = {
   boxShadow: 24,
   p: 4,
   width: {
-    "@media (max-width: 500px)": {
-      width: "350px",
-    },
     "@media (max-width: 2000px)": {
       width: "600px",
     },
+    "@media (max-width: 500px)": {
+      width: "350px",
+    },
   },
   height: {
+    "@media (max-width: 700px)": {
+      height: "670px",
+    },
     "@media (max-width: 500px)": {
-      height: "800px",
+      height: "580px",
     },
   },
 };
