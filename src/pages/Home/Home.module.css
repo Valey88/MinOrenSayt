@@ -81,7 +81,7 @@
   grid-gap: 5rem;
 }
 .HomeFooterDescription h2 {
-  font-size: 9.2rem;
+  font-size: 8.55rem;
 }
 .HomeFooterDescriptionItem button {
   background: none;
@@ -234,6 +234,25 @@
 }
 /* * Slider section * */
 
+/* * Partner section * */
+.partner {
+  border-radius: 7rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 3rem;
+}
+.partnerIcon {
+  width: 35rem;
+  border-radius: 5rem;
+  margin: 0 5rem;
+}
+.partnerSection {
+  margin-bottom: 10rem;
+}
+/* * Partner section * */
+
 @media (max-width: 1440px) {
   .image {
     width: 90rem;
@@ -364,6 +383,11 @@
   }
   .mapContainer {
     width: 40rem;
+  }
+  .partnerIcon {
+    width: 25rem;
+    border-radius: 5rem;
+    margin: 0 5rem;
   }
 }
 @media (max-width: 500px) {
