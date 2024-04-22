@@ -1,5 +1,8 @@
 import "./Footer.css";
-export default function Footer() {
+import { useState } from "react";
+import Modal from "../modal/Modal";
+export default function Footer({ city, setCity, rayon, setRayon }) {
+  const [isOpen, setOpen] = useState(false);
   return (
     <footer>
       <a href="">
@@ -43,7 +46,12 @@ export default function Footer() {
             </a>
           </li>
           <li>
-            <button>Регистрация</button>
+          <Modal
+            city={city}
+            setCity={setCity}
+            rayon={rayon}
+            setRayon={setRayon}
+          />
           </li>
         </ul>
       </div>
