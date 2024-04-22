@@ -6,6 +6,7 @@ import Modal from "@mui/material/Modal";
 import { useState } from "react";
 import { rayons } from "./datalist";
 import styles from "./Modal.module.css";
+import { useAddUsersMutation } from "../../redux/OrenApi";
 
 const style = {
   position: "absolute",
@@ -20,69 +21,79 @@ const style = {
   boxShadow: 24,
   p: 4,
   width: {
-    "@media (max-width: 500px)": {
-      width: "350px",
-    },
     "@media (max-width: 2000px)": {
       width: "600px",
     },
+    "@media (max-width: 500px)": {
+      width: "350px",
+    },
   },
   height: {
+    "@media (max-width: 700px)": {
+      height: "670px",
+    },
     "@media (max-width: 500px)": {
-      height: "800px",
+      height: "580px",
     },
   },
 };
 
-export default function BasicModal({ city, setCity, rayon, setRayon }) {
+export default function BasicModal() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [events, setEvents] = useState([]);
+  const [city, setCity] = useState("");
+  const [rayon, setRayon] = useState("");
+  const [fio, setFio] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [organization, setOrganization] = useState("");
+  const [post, setPost] = useState("");
+  const [postUser] = useAddUsersMutation();
+  console.log(events);
+  console.log(city, rayon);
 
-  const addNewOrder = async () => {
+  const addNewUsers = async () => {
     console.log({
-      roomId,
-      timeStart,
-      durationHours,
-      durationMinuts,
-      summaryEvent,
       fio,
       email,
       phoneNumber,
+      organization,
+      post,
+      city,
+      district,
     });
     if (
-      roomId &&
-      timeStart &&
-      durationHours &&
-      durationMinuts &&
-      summaryEvent &&
-      summaryEvent &&
       fio &&
       email &&
-      phoneNumber
+      phoneNumber &&
+      organization &&
+      post &&
+      city &&
+      district &&
+      events
     ) {
-      await postOrders({
-        roomId,
-        timeStart,
-        durationHours,
-        durationMinuts,
-        summaryEvent,
+      await postUser({
         fio,
         email,
         phoneNumber,
+        organization,
+        post,
+        city,
+        district,
+        events,
       }).unwrap();
-      setRoomId("");
-      setTimeStart("");
-      setDurationHours("");
-      setDurationMinuts("");
-      setSummaryEvent("");
       setFio("");
       setEmail("");
       setPhoneNumber("");
+      setOrganization("");
+      setPost("");
+      setCity("");
+      setRayon("");
+      setEvents([]);
     }
   };
-  console.log(city);
-  console.log(rayon);
   return (
     <div>
       <button className={styles.modalHeadButton} onClick={handleOpen}>
@@ -107,7 +118,7 @@ export default function BasicModal({ city, setCity, rayon, setRayon }) {
                     className={styles.modalInput}
                     type="text"
                     placeholder="ФИО"
-                    onChange={(e) => setTimeStart(e.target.value)}
+                    onChange={(e) => setFio(e.target.value)}
                   />
                 </div>
                 <div className={styles.modalItemInput}>
@@ -116,7 +127,7 @@ export default function BasicModal({ city, setCity, rayon, setRayon }) {
                     className={styles.modalInput}
                     type="text"
                     placeholder="Email"
-                    onChange={(e) => setTimeStart(e.target.value)}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className={styles.modalItemInput}>
@@ -125,7 +136,7 @@ export default function BasicModal({ city, setCity, rayon, setRayon }) {
                     className={styles.modalInput}
                     type="text"
                     placeholder="Номер телефона"
-                    onChange={(e) => setTimeStart(e.target.value)}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
                   />
                 </div>
                 <div className={styles.modalItemInput}>
@@ -134,7 +145,7 @@ export default function BasicModal({ city, setCity, rayon, setRayon }) {
                     className={styles.modalInput}
                     placeholder="Организация"
                     type="text"
-                    onChange={(e) => setTimeStart(e.target.value)}
+                    onChange={(e) => setOrganization(e.target.value)}
                   />
                 </div>
                 <div className={styles.modalItemInput}>
@@ -143,12 +154,11 @@ export default function BasicModal({ city, setCity, rayon, setRayon }) {
                     className={styles.modalInput}
                     placeholder="Должность"
                     type="text"
-                    onChange={(e) => setTimeStart(e.target.value)}
+                    onChange={(e) => setPost(e.target.value)}
                   />
                 </div>
                 <div className={styles.modalItemInput}>
                   <select
-                    value={city}
                     onChange={(e) => setCity(e.target.value)}
                     className={styles.cityList}
                   >
@@ -160,7 +170,6 @@ export default function BasicModal({ city, setCity, rayon, setRayon }) {
                     <option value="г. Орск">г. Орск</option>
                   </select>
                   <select
-                    value={rayon}
                     onChange={(e) => setRayon(e.target.value)}
                     className={styles.cityList}
                   >
@@ -176,8 +185,40 @@ export default function BasicModal({ city, setCity, rayon, setRayon }) {
                     <option value="г. Орск">г. Орск</option> */}
                   </select>
                 </div>
+                <div>
+                  <input
+                    type="radio"
+                    value={1}
+                    onChange={(e) => setEvents(e.target.value)}
+                  />
+                  12121
+                  <input
+                    type="radio"
+                    value={2}
+                    onChange={(e) => setEvents(e.target.value)}
+                  />
+                  12121
+                  <input
+                    type="radio"
+                    value={3}
+                    onChange={(e) => setEvents(e.target.value)}
+                  />
+                  12121
+                  <input
+                    type="radio"
+                    value={4}
+                    onChange={(e) => setEvents(e.target.value)}
+                  />
+                  12121
+                  <input
+                    type="radio"
+                    value={5}
+                    onChange={(e) => setEvents(e.target.value)}
+                  />
+                  12121
+                </div>
                 <div className={styles.modalItemInput}>
-                  <button className={styles.modalButton} onClick={addNewOrder}>
+                  <button className={styles.modalButton} onClick={addNewUsers}>
                     Регистрация
                   </button>
                 </div>

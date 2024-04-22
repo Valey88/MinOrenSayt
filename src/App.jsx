@@ -8,12 +8,9 @@ import Modal from "./components/modal/Modal";
 import Footer from "./components/Footer/Footer";
 
 function App() {
-  const [city, setCity] = useState("");
-  const [rayon, setRayon] = useState("");
-
   return (
     <>
-      <Header city={city} setCity={setCity} rayon={rayon} setRayon={setRayon} />
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="/Admin" element={<Admin />} />
