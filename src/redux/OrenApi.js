@@ -4,6 +4,7 @@ export const OrenApi = createApi({
   reducerPath: "orenApi/api",
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000/" }),
   endpoints: (builder) => ({
+
     addUsers: builder.mutation({
       query: (body) => ({
         url: "api/user",
@@ -24,4 +25,6 @@ export const OrenApi = createApi({
   }),
 });
 
-export const { useAddUsersMutation } = OrenApi;
+export const {
+ useAddUsersMutation
+} = OrenApi;
