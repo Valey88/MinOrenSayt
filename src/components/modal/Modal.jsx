@@ -42,7 +42,7 @@ export default function BasicModal() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [events, setEvents] = useState([]);
+  const [selectedAnswers, setSelectedAnswers] = useState([]);
   const [city, setCity] = useState("");
   const [rayon, setRayon] = useState("");
   const [fio, setFio] = useState("");
@@ -51,8 +51,36 @@ export default function BasicModal() {
   const [organization, setOrganization] = useState("");
   const [post, setPost] = useState("");
   const [postUser] = useAddUsersMutation();
-  console.log(events);
   console.log(city, rayon);
+
+  const answers = [
+    { id: "1", name: "Хорошо там, где мы есть!" },
+    { id: "2", name: "Обыкновенное чудо" },
+    { id: "3", name: "Тренинг «Иван Васильевич не меняет профессию»" },
+    {
+      id: "4",
+      name: "Торжественная церемония награждения победителей конкурсов",
+    },
+    {
+      id: "5",
+      name: "Невероятные приключения в использовании законодательства по охране труда",
+    },
+    {
+      id: "6",
+      name: "Добро пожаловать в IT, или посторонним вход воспрещен!",
+    },
+    { id: "7", name: "Движение вверх" },
+    {
+      id: "8",
+      name: "Концертная программа «Открытие третьего трудового семестра»",
+    },
+    { id: "9", name: "Оренбург" },
+    { id: "10", name: "Оренбург" },
+  ];
+
+  const handleSelectAnswer = (answer) => {
+    setSelectedAnswers([...selectedAnswers, answer]);
+  };
 
   const addNewUsers = async () => {
     console.log({
@@ -62,7 +90,8 @@ export default function BasicModal() {
       organization,
       post,
       city,
-      district,
+      rayon,
+      selectedAnswers,
     });
     if (
       fio &&
@@ -71,8 +100,8 @@ export default function BasicModal() {
       organization &&
       post &&
       city &&
-      district &&
-      events
+      rayon &&
+      selectedAnswers
     ) {
       await postUser({
         fio,
@@ -81,8 +110,8 @@ export default function BasicModal() {
         organization,
         post,
         city,
-        district,
-        events,
+        rayon,
+        selectedAnswers,
       }).unwrap();
       setFio("");
       setEmail("");
@@ -91,9 +120,10 @@ export default function BasicModal() {
       setPost("");
       setCity("");
       setRayon("");
-      setEvents([]);
+      setSelectedAnswers([]);
     }
   };
+
   return (
     <div>
       <button className={styles.modalHeadButton} onClick={handleOpen}>
@@ -186,36 +216,24 @@ export default function BasicModal() {
                   </select>
                 </div>
                 <div>
-                  <input
-                    type="radio"
-                    value={1}
-                    onChange={(e) => setEvents(e.target.value)}
-                  />
-                  12121
-                  <input
-                    type="radio"
-                    value={2}
-                    onChange={(e) => setEvents(e.target.value)}
-                  />
-                  12121
-                  <input
-                    type="radio"
-                    value={3}
-                    onChange={(e) => setEvents(e.target.value)}
-                  />
-                  12121
-                  <input
-                    type="radio"
-                    value={4}
-                    onChange={(e) => setEvents(e.target.value)}
-                  />
-                  12121
-                  <input
-                    type="radio"
-                    value={5}
-                    onChange={(e) => setEvents(e.target.value)}
-                  />
-                  12121
+                  <h1>Выбранные ответы:</h1>
+                  <ul>
+                    {selectedAnswers.map((answer) => (
+                      <li key={answer.id}>{answer.name}</li>
+                    ))}
+                  </ul>
+
+                  <h2>Доступные варианты ответов:</h2>
+                  <ul>
+                    {answers.map((answer) => (
+                      <li
+                        key={answer.id}
+                        onClick={() => handleSelectAnswer(answer)}
+                      >
+                        {answer.name}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
                 <div className={styles.modalItemInput}>
                   <button className={styles.modalButton} onClick={addNewUsers}>
