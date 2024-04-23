@@ -131,7 +131,7 @@ export default function BasicModal() {
       setPost("");
       setCity("");
       setRayon("");
-      setSelectedAnswers([{}]);
+      setSelectedAnswers([]);
     }
   };
 
