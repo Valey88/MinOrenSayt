@@ -51,35 +51,41 @@ export default function BasicModal() {
   const [organization, setOrganization] = useState("");
   const [post, setPost] = useState("");
   const [postUser] = useAddUsersMutation();
-  console.log(city, rayon);
+
 
   const answers = [
-    { id: "1", name: "Хорошо там, где мы есть!" },
-    { id: "2", name: "Обыкновенное чудо" },
-    { id: "3", name: "Тренинг «Иван Васильевич не меняет профессию»" },
+    { id: parseInt('1'), name: "Хорошо там, где мы есть!" },
+    { id: parseInt('2'), name: "Обыкновенное чудо" },
+    { id: parseInt('3'), name: "Тренинг «Иван Васильевич не меняет профессию»" },
     {
-      id: "4",
+      id: parseInt('4'),
       name: "Торжественная церемония награждения победителей конкурсов",
     },
     {
-      id: "5",
+      id: parseInt('5'),
       name: "Невероятные приключения в использовании законодательства по охране труда",
     },
     {
-      id: "6",
+      id: parseInt('6'),
       name: "Добро пожаловать в IT, или посторонним вход воспрещен!",
     },
-    { id: "7", name: "Движение вверх" },
+    { id: parseInt('7'), name: "Движение вверх" },
     {
-      id: "8",
+      id: parseInt('8'),
       name: "Концертная программа «Открытие третьего трудового семестра»",
     },
-    { id: "9", name: "Оренбург" },
-    { id: "10", name: "Оренбург" },
+    { id: parseInt('9'), name: "Оренбург" },
+    { id: parseInt('10'), name: "Оренбург" },
   ];
 
   const handleSelectAnswer = (answer) => {
-    setSelectedAnswers([...selectedAnswers, answer]);
+    setSelectedAnswers(prevSelectedAnswers => {
+      if (prevSelectedAnswers.includes(answer.id)) {
+        return prevSelectedAnswers.filter(selectedId => selectedId !== answer.id);
+      } else {
+        return [...prevSelectedAnswers, answer.id];
+      }
+    });
   };
 
   const addNewUsers = async () => {
@@ -120,7 +126,7 @@ export default function BasicModal() {
       setPost("");
       setCity("");
       setRayon("");
-      setSelectedAnswers([]);
+      setSelectedAnswers([{}]);
     }
   };
 
@@ -143,54 +149,54 @@ export default function BasicModal() {
                   <h2>Регистрация участников</h2>
                 </div>
                 <div className={styles.modalItemInput}>
-                  <img src="/public/User.svg" alt="" />
+                  <img src="/public/User.svg" alt=""/>
                   <input
-                    className={styles.modalInput}
-                    type="text"
-                    placeholder="ФИО"
-                    onChange={(e) => setFio(e.target.value)}
+                      className={styles.modalInput}
+                      type="text"
+                      placeholder="ФИО"
+                      onChange={(e) => setFio(e.target.value)}
                   />
                 </div>
                 <div className={styles.modalItemInput}>
-                  <img src="/public/Mail.svg" alt="" />
+                  <img src="/public/Mail.svg" alt=""/>
                   <input
-                    className={styles.modalInput}
-                    type="text"
-                    placeholder="Email"
-                    onChange={(e) => setEmail(e.target.value)}
+                      className={styles.modalInput}
+                      type="text"
+                      placeholder="Email"
+                      onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className={styles.modalItemInput}>
-                  <img src="/public/Phone.svg" alt="" />
+                  <img src="/public/Phone.svg" alt=""/>
                   <input
-                    className={styles.modalInput}
-                    type="text"
-                    placeholder="Номер телефона"
-                    onChange={(e) => setPhoneNumber(e.target.value)}
+                      className={styles.modalInput}
+                      type="text"
+                      placeholder="Номер телефона"
+                      onChange={(e) => setPhoneNumber(e.target.value)}
                   />
                 </div>
                 <div className={styles.modalItemInput}>
-                  <img src="/public/Group.svg" alt="" />
+                  <img src="/public/Group.svg" alt=""/>
                   <input
-                    className={styles.modalInput}
-                    placeholder="Организация"
-                    type="text"
-                    onChange={(e) => setOrganization(e.target.value)}
+                      className={styles.modalInput}
+                      placeholder="Организация"
+                      type="text"
+                      onChange={(e) => setOrganization(e.target.value)}
                   />
                 </div>
                 <div className={styles.modalItemInput}>
-                  <img src="/public/Stuff.svg" alt="" />
+                  <img src="/public/Stuff.svg" alt=""/>
                   <input
-                    className={styles.modalInput}
-                    placeholder="Должность"
-                    type="text"
-                    onChange={(e) => setPost(e.target.value)}
+                      className={styles.modalInput}
+                      placeholder="Должность"
+                      type="text"
+                      onChange={(e) => setPost(e.target.value)}
                   />
                 </div>
                 <div className={styles.modalItemInput}>
                   <select
-                    onChange={(e) => setCity(e.target.value)}
-                    className={styles.cityList}
+                      onChange={(e) => setCity(e.target.value)}
+                      className={styles.cityList}
                   >
                     <option value="">Выберите город</option>
                     <option value="г. Оренбург">г. Оренбург</option>
@@ -200,12 +206,12 @@ export default function BasicModal() {
                     <option value="г. Орск">г. Орск</option>
                   </select>
                   <select
-                    onChange={(e) => setRayon(e.target.value)}
-                    className={styles.cityList}
+                      onChange={(e) => setRayon(e.target.value)}
+                      className={styles.cityList}
                   >
                     <option value="">Выберите район</option>
                     {rayons.map((rayon) => (
-                      <option value={rayon.name1}>{rayon.name2}</option>
+                        <option value={rayon.name1}>{rayon.name2}</option>
                     ))}
                     {/* <option value="">Выберите район</option>
                     <option value="г. Оренбург">г. Оренбург</option>
@@ -218,20 +224,25 @@ export default function BasicModal() {
                 <div>
                   <h1>Выбранные ответы:</h1>
                   <ul>
-                    {selectedAnswers.map((answer) => (
-                      <li key={answer.id}>{answer.name}</li>
-                    ))}
+                    {selectedAnswers.map((selectedId) => {
+                      const selectedAnswer = answers.find(answer => answer.id === selectedId);
+                      return <li key={selectedId}>{selectedAnswer?.name}</li>;
+                    })}
                   </ul>
 
                   <h2>Доступные варианты ответов:</h2>
                   <ul>
                     {answers.map((answer) => (
-                      <li
-                        key={answer.id}
-                        onClick={() => handleSelectAnswer(answer)}
-                      >
-                        {answer.name}
-                      </li>
+                        <li key={answer.id}>
+                          <label>
+                            <input
+                                type="checkbox"
+                                onChange={() => handleSelectAnswer(answer)}
+                                checked={selectedAnswers.includes(answer.id)}
+                            />
+                            {answer.name}
+                          </label>
+                        </li>
                     ))}
                   </ul>
                 </div>
