@@ -1,14 +1,15 @@
-import { Link, useLocation } from "react-router-dom";
+import {useLocation } from "react-router-dom";
 import "./Header.css";
 import { useState } from "react";
 import Modal from "../modal/Modal";
+import { Link } from "react-scroll";
 
 export default function Header({ city, setCity, rayon, setRayon }) {
   const [isOpen, setOpen] = useState(false);
 
   return (
     <>
-      <header className="header">
+      <header className="header" id="main">
         <div className="headerLogo">
           <Link to="/">
             <img src="/public/Logo.svg" alt="" />
@@ -20,16 +21,16 @@ export default function Header({ city, setCity, rayon, setRayon }) {
         >
           <ul className="headerNavList">
             <li className="headerNavItem">
-              <Link to="/">Цели форума </Link>
+              <Link to="purpose" smooth={true}>Цели форума</Link>
             </li>
             <li className="headerNavItem">
-              <Link to="/contacts">Программа мероприятий</Link>
+              <Link to="event" smooth={true}>Программа мероприятий</Link>
             </li>
             <li className="headerNavItem">
-              <Link to="/Booking">Карта мероприятий </Link>
+              <Link to="map" smooth={true}>Карта мероприятий </Link>
             </li>
             <li className="headerNavItem">
-              <Link to="https://t.me/coworking_orgmu">Галерея</Link>
+              <Link to="gallery" smooth={true}>Галерея</Link>
             </li>
             <li className="headerNavBtn">
               <Modal

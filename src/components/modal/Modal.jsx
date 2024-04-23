@@ -7,6 +7,7 @@ import { useState } from "react";
 import { rayons } from "./datalist";
 import styles from "./Modal.module.css";
 import { useAddUsersMutation } from "../../redux/OrenApi";
+// import CheckBox from "../CheckBox/CheckBox";
 
 const style = {
   position: "absolute",
@@ -186,36 +187,10 @@ export default function BasicModal() {
                   </select>
                 </div>
                 <div>
-                  <input
-                    type="radio"
-                    value={1}
-                    onChange={(e) => setEvents(e.target.value)}
-                  />
-                  12121
-                  <input
-                    type="radio"
-                    value={2}
-                    onChange={(e) => setEvents(e.target.value)}
-                  />
-                  12121
-                  <input
-                    type="radio"
-                    value={3}
-                    onChange={(e) => setEvents(e.target.value)}
-                  />
-                  12121
-                  <input
-                    type="radio"
-                    value={4}
-                    onChange={(e) => setEvents(e.target.value)}
-                  />
-                  12121
-                  <input
-                    type="radio"
-                    value={5}
-                    onChange={(e) => setEvents(e.target.value)}
-                  />
-                  12121
+                  {/* <CheckBox value={1}>1234</CheckBox>
+                  <CheckBox value={2}>1674</CheckBox>
+                  <CheckBox value={3}>3455</CheckBox>
+                  <CheckBox value={4}>4534</CheckBox> */}
                 </div>
                 <div className={styles.modalItemInput}>
                   <button className={styles.modalButton} onClick={addNewUsers}>
