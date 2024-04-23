@@ -4,6 +4,7 @@ import { RouteButton, YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./styles.css";
 import EventBlock from "/src/components/EventBlock/EventBlock";
+import Marquee from "react-fast-marquee";
 
 // Import Swiper styles
 import "swiper/css";
@@ -31,17 +32,17 @@ const Home = () => {
             <div className={style.HomeHeaderBlock}>
               <div className={style.blockHeaderImg}>
                 <div className={style.cards}>
-                  <img src="/public/badge.png" alt="" />
+                  <img src="/public/badge.svg" alt="" />
                 </div>
                 <div className={style.gerb}>
-                  <img src="/public/emblem.png" alt="" />
+                  <img src="/public/emblem.svg" alt="" />
                 </div>
               </div>
               <div className={style.HomeHeaderDescription}>
                 <h2>22 - 23 мая</h2>
                 <p>
                   Оренбург <br />
-                  ДКиС “Газовик”
+                  ДКиС «Газовик»
                 </p>
               </div>
               <div className={style.HomeFooterDescription}>
@@ -50,7 +51,7 @@ const Home = () => {
                   <button>Принять участие</button>
                 </div>
                 <div>
-                  <h2>Живи и работай в Оренбуржье!</h2>
+                  <h2>«Живи и работай в Оренбуржье!»</h2>
                 </div>
               </div>
             </div>
@@ -268,6 +269,27 @@ const Home = () => {
                 <img src="/public/image 17.png" />
               </SwiperSlide>
             </Swiper>
+          </div>
+        </div>
+        <div className={style.partnerSection}>
+          <div className={style.heading}>
+            <h2>Партнёры</h2>
+          </div>
+          <div className={style.Center}>
+            <div className={style.partner}>
+              <Marquee speed={100} pauseOnClick="true">
+                <img
+                  className={style.partnerIcon}
+                  src="public\Gazprom.svg"
+                  alt=""
+                />
+                <img
+                  className={style.partnerIcon}
+                  src="public\emblem.svg"
+                  alt=""
+                />
+              </Marquee>
+            </div>
           </div>
         </div>
       </div>
