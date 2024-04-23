@@ -51,35 +51,45 @@ export default function BasicModal() {
   const [organization, setOrganization] = useState("");
   const [post, setPost] = useState("");
   const [postUser] = useAddUsersMutation();
-  console.log(city, rayon);
 
   const answers = [
-    { id: 1, name: "Хорошо там, где мы есть!" },
-    { id: 2, name: "Обыкновенное чудо" },
-    { id: 3, name: "Тренинг «Иван Васильевич не меняет профессию»" },
+    { id: parseInt("1"), name: "Хорошо там, где мы есть!" },
+    { id: parseInt("2"), name: "Обыкновенное чудо" },
     {
-      id: 4,
+      id: parseInt("3"),
+      name: "Тренинг «Иван Васильевич не меняет профессию»",
+    },
+    {
+      id: parseInt("4"),
       name: "Торжественная церемония награждения победителей конкурсов",
     },
     {
-      id: 5,
+      id: parseInt("5"),
       name: "Невероятные приключения в использовании законодательства по охране труда",
     },
     {
-      id: 6,
+      id: parseInt("6"),
       name: "Добро пожаловать в IT, или посторонним вход воспрещен!",
     },
-    { id: 7, name: "Движение вверх" },
+    { id: parseInt("7"), name: "Движение вверх" },
     {
-      id: 8,
+      id: parseInt("8"),
       name: "Концертная программа «Открытие третьего трудового семестра»",
     },
-    { id: 9, name: "Оренбург" },
-    { id: 10, name: "Оренбург" },
+    { id: parseInt("9"), name: "Оренбург" },
+    { id: parseInt("10"), name: "Оренбург" },
   ];
 
   const handleSelectAnswer = (answer) => {
-    setSelectedAnswers([...selectedAnswers, answer]);
+    setSelectedAnswers((prevSelectedAnswers) => {
+      if (prevSelectedAnswers.includes(answer.id)) {
+        return prevSelectedAnswers.filter(
+          (selectedId) => selectedId !== answer.id
+        );
+      } else {
+        return [...prevSelectedAnswers, answer.id];
+      }
+    });
   };
 
   const addNewUsers = async () => {
@@ -120,7 +130,7 @@ export default function BasicModal() {
       setPost("");
       setCity("");
       setRayon("");
-      setSelectedAnswers([]);
+      setSelectedAnswers([{}]);
     }
   };
 
@@ -218,19 +228,26 @@ export default function BasicModal() {
                 <div>
                   <h1>Выбранные ответы:</h1>
                   <ul>
-                    {selectedAnswers.map((answer) => (
-                      <li key={answer.id}>{answer.name}</li>
-                    ))}
+                    {selectedAnswers.map((selectedId) => {
+                      const selectedAnswer = answers.find(
+                        (answer) => answer.id === selectedId
+                      );
+                      return <li key={selectedId}>{selectedAnswer?.name}</li>;
+                    })}
                   </ul>
 
                   <h2>Доступные варианты ответов:</h2>
                   <ul>
                     {answers.map((answer) => (
-                      <li
-                        key={answer.id}
-                        onClick={() => handleSelectAnswer(answer)}
-                      >
-                        {answer.name}
+                      <li key={answer.id}>
+                        <label>
+                          <input
+                            type="checkbox"
+                            onChange={() => handleSelectAnswer(answer)}
+                            checked={selectedAnswers.includes(answer.id)}
+                          />
+                          {answer.name}
+                        </label>
                       </li>
                     ))}
                   </ul>
