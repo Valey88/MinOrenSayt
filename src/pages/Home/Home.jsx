@@ -20,6 +20,7 @@ import {
   Mousewheel,
   Keyboard,
 } from "swiper/modules";
+// import { Modal } from "../../components/modal/Modal";
 import { Modal } from "@mui/material";
 
 const Home = () => {
@@ -129,6 +130,10 @@ const Home = () => {
                   >
                     Город профессий (ОГАУ)
                   </EventBlock>
+<<<<<<< HEAD
+=======
+                  {/* <Modal /> */}
+>>>>>>> 2fce0bc15960524f44c2caa742fa96a24fafcde8
                 </div>
                 <img className={style.eventList} src="\public\EventList.svg" />
               </div>

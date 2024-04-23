@@ -43,12 +43,7 @@ export default function Header({ city, setCity, rayon, setRayon }) {
           </ul>
         </nav>
         <div className="regBtn">
-          <Modal
-            city={city}
-            setCity={setCity}
-            rayon={rayon}
-            setRayon={setRayon}
-          />
+          <Modal />
         </div>
         <div className="headerMenu">
           <button onClick={() => setOpen(!isOpen)}>

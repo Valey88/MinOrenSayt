@@ -4,27 +4,24 @@ export const OrenApi = createApi({
   reducerPath: "orenApi/api",
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000/" }),
   endpoints: (builder) => ({
-
     addUsers: builder.mutation({
       query: (body) => ({
         url: "api/user",
         headers: { "Content-Type": "application/json" },
         method: "POST",
         body: {
-          fio: body.address,
-          email: body.name,
-          phone: body.description,
-          organization: body.price,
-          post: body.places,
-          city: body.weeks,
-          district: body.timeStart,
-          events: body.timeEnd,
+          fio: body.fio,
+          email: body.email,
+          phone: body.phoneNumber,
+          organization: body.organization,
+          post: body.post,
+          city: body.city,
+          district: body.rayon,
+          events: body.selectedAnswers,
         },
       }),
     }),
   }),
 });
 
-export const {
- useAddUsersMutation
-} = OrenApi;
+export const { useAddUsersMutation } = OrenApi;
