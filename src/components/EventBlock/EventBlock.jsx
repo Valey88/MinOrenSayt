@@ -13,5 +13,3 @@ export default function EventBlock({ color, children, eventList }) {
     </div>
   );
 }
-
-// МОДАЛКА ЗНАЧЕНИЕ ДРУГОЙ РЕГИОН РФ

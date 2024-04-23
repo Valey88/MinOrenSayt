@@ -1,6 +1,7 @@
 import "./Footer.css";
 import { useState } from "react";
 import Modal from "../modal/Modal";
+import { Link } from "react-scroll";
 export default function Footer({ city, setCity, rayon, setRayon }) {
   const [isOpen, setOpen] = useState(false);
   return (
@@ -11,26 +12,36 @@ export default function Footer({ city, setCity, rayon, setRayon }) {
       <div className="navigation">
         <ul>
           <li>
-            <a href="">Главная</a>
+            <Link to="main" smooth={true} >
+              Главная
+            </Link>
           </li>
           <li>
-            <a href="">Цели форума</a>
+            <Link to="purpose" smooth={true}>
+              Цели форума
+            </Link>
           </li>
           <li>
-            <a href="">Программа мероприятий</a>
+            <Link to="event" smooth={true}>
+              Программа мероприятий
+            </Link>
           </li>
           <li>
-            <a href="">Карта мероприятий</a>
+            <Link to="map" smooth={true}>
+              Карта мероприятий
+            </Link>
           </li>
           <li>
-            <a href="">Галерея</a>
+            <Link to="gallery" smooth={100}>
+              Галерея
+            </Link>
           </li>
         </ul>
       </div>
       <div className="contacts">
         <ul>
           <li>
-            <a href="socp@mail.orb.ru">socp@mail.orb.ru</a>
+            <a href="mailto:socp@mail.orb.ru">socp@mail.orb.ru</a>
           </li>
           <li>
             <a href="tel:+73532770147">+7 (3532) 770147</a>
@@ -46,12 +57,12 @@ export default function Footer({ city, setCity, rayon, setRayon }) {
             </a>
           </li>
           <li>
-          <Modal
-            city={city}
-            setCity={setCity}
-            rayon={rayon}
-            setRayon={setRayon}
-          />
+            <Modal
+              city={city}
+              setCity={setCity}
+              rayon={rayon}
+              setRayon={setRayon}
+            />
           </li>
         </ul>
       </div>

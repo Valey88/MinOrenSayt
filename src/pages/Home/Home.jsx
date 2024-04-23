@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./Home.module.css";
-import { RouteButton, YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
+import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./styles.css";
 import EventBlock from "/src/components/EventBlock/EventBlock";
@@ -57,7 +57,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className={style.aboutSection}>
+        <div className={style.aboutSection} id="purpose">
           <div className={style.heading}>
             <h2>Цели форума</h2>
           </div>
@@ -110,40 +110,7 @@ const Home = () => {
           </div>
         </div>
 
-        {/* <div className={style.eventSection}>
-          <div className={style.heading}>
-            <h2>Программа мероприятий</h2>
-          </div>
-          <div className={style.Center}>
-            <div className={style.programmContainer}>
-              <div className={style.programmContent}>
-                <div className={style.programmColumn}>
-                  <EventBlock color="blue">
-                    Большой театрально-концертный зал
-                  </EventBlock>
-                  <EventBlock color="red">Зимний сад</EventBlock>
-                </div>
-                <div className={style.programmColumn}>
-                  <EventBlock color="yellow">
-                    <p>
-                      Открытая площадка
-                      <br /> ДКиС «Газовик»
-                    </p>
-                  </EventBlock>
-                  <EventBlock color="green">Зал совещаний</EventBlock>
-                  <EventBlock color="darkblue">
-                    Малый театрально-концертный зал
-                  </EventBlock>
-                </div>
-              </div>
-              <div className={style.programmFooter}>
-                <button>регистрация</button>
-              </div>
-            </div>
-          </div>
-        </div> */}
-
-        <div className={style.eventSection}>
+        <div className={style.eventSection} id="event">
           <div className={style.heading}>
             <h2>Мероприятия</h2>
           </div>
@@ -163,14 +130,17 @@ const Home = () => {
                   >
                     Город профессий (ОГАУ)
                   </EventBlock>
+<<<<<<< HEAD
+=======
                   {/* <Modal /> */}
+>>>>>>> 2fce0bc15960524f44c2caa742fa96a24fafcde8
                 </div>
                 <img className={style.eventList} src="\public\EventList.svg" />
               </div>
             </div>
           </div>
         </div>
-        <div className={style.mapSection}>
+        <div className={style.mapSection} id="map">
           <div className={style.heading}>
             <h2>Карта мероприятий</h2>
           </div>
@@ -180,7 +150,7 @@ const Home = () => {
                 <Map
                   defaultState={{ center: [51.762413, 55.11635], zoom: 16 }}
                   width={-1}
-                  height={600}
+                  height={500}
                 >
                   <Placemark
                     options={{
@@ -227,7 +197,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className={style.sliderSection}>
+        <div className={style.sliderSection} id="gallery">
           <div className={style.heading}>
             <h2>Галерея</h2>
           </div>

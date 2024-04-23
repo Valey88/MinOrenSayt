@@ -7,6 +7,7 @@ import { useState } from "react";
 import { rayons } from "./datalist";
 import styles from "./Modal.module.css";
 import { useAddUsersMutation } from "../../redux/OrenApi";
+// import CheckBox from "../CheckBox/CheckBox";
 
 const style = {
   position: "absolute",
