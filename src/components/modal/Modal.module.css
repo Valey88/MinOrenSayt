@@ -4,7 +4,7 @@
   align-items: center;
   grid-gap: 2.5rem;
   /* padding-bottom: 2rem; */
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 .modalButton {
   width: 25rem;
@@ -178,4 +178,51 @@
     height: 5.8rem;
     font-size: 1.5rem;
   }
+}
+
+.dropidropi {
+  margin: 4rem 2rem;
+}
+a.button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 1.8rem;
+  font-weight: 350;
+  border: none;
+  border-bottom: #000000 solid 2px;
+  font-size: 2.2rem;
+  cursor: pointer;
+  width: 30rem;
+}
+
+.dropdown summary {
+  list-style: none;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown ul {
+  position: relative;
+  box-sizing: border-box;
+  z-index: 2;
+  list-style: none;
+  height: 12rem;
+  overflow-y: scroll;
+  margin-top: 2rem;
+  width: 400px;
+}
+
+.dropdown ul li {
+  font-size: 1.8rem;
+  text-wrap: balance;
+  margin: 1rem;
+}
+
+.dropdown ul li input {
+  width: 20px;
+  height: 20px;
+  margin-right: 1rem;
 }
