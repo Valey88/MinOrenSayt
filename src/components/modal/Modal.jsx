@@ -51,10 +51,14 @@ export default function BasicModal() {
   const [organization, setOrganization] = useState("");
   const [post, setPost] = useState("");
   const [postUser] = useAddUsersMutation();
+  const [successMessage, setSuccessMessage] = useState("");
 
   const answers = [
-    { id: parseInt("1"), name: "Хорошо там, где мы есть!" },
-    { id: parseInt("2"), name: "Обыкновенное чудо" },
+    {
+      id: parseInt("1"),
+      name: "Пленарная сессия «Вектор развития кадровой политики: новые инструменты и возможности»",
+    },
+    { id: parseInt("2"), name: "Сессия «Цифровое будущее охраны труда»" },
     {
       id: parseInt("3"),
       name: "Тренинг «Иван Васильевич не меняет профессию»",
@@ -65,19 +69,25 @@ export default function BasicModal() {
     },
     {
       id: parseInt("5"),
-      name: "Невероятные приключения в использовании законодательства по охране труда",
+      name: "Пленарная сессия «Основные акценты в изменениях трудового законодательства»",
     },
     {
       id: parseInt("6"),
-      name: "Добро пожаловать в IT, или посторонним вход воспрещен!",
+      name: "Сессия «IT-cервисы в решении кадровых задач»",
     },
-    { id: parseInt("7"), name: "Движение вверх" },
+    { id: parseInt("7"), name: "Дискуссионная сессия «Встреча без галстуков»" },
     {
       id: parseInt("8"),
       name: "Концертная программа «Открытие третьего трудового семестра»",
     },
-    { id: parseInt("9"), name: "Оренбург" },
-    { id: parseInt("10"), name: "Оренбург" },
+    {
+      id: parseInt("9"),
+      name: "Дискуссионная сессия «Охрана труда в бюджетных организациях»",
+    },
+    {
+      id: parseInt("10"),
+      name: "Сессия «Особенности расследования несчастных случаев на производстве»",
+    },
   ];
   console.log(answers);
 
@@ -93,7 +103,7 @@ export default function BasicModal() {
     });
   };
 
-  const addNewUsers = async () => {
+  const addNewUsers = () => {
     console.log({
       fio,
       email,
@@ -114,7 +124,7 @@ export default function BasicModal() {
       rayon &&
       selectedAnswers
     ) {
-      await postUser({
+      postUser({
         fio,
         email,
         phoneNumber,
@@ -123,16 +133,26 @@ export default function BasicModal() {
         city,
         rayon,
         selectedAnswers,
-      }).unwrap();
-      setFio("");
-      setEmail("");
-      setPhoneNumber("");
-      setOrganization("");
-      setPost("");
-      setCity("");
-      setRayon("");
-      setSelectedAnswers([]);
+      })
+        .unwrap()
+        .then(() => {
+          clearInputs();
+          setSuccessMessage(
+            "Вы успешно зарегистрировались проверьте email на наличие письма с qr-cod!"
+          );
+        });
     }
+  };
+
+  const clearInputs = () => {
+    setFio("");
+    setEmail("");
+    setPhoneNumber("");
+    setOrganization("");
+    setPost("");
+    setCity("");
+    setRayon("");
+    setSelectedAnswers([]);
   };
 
   return (
@@ -149,6 +169,7 @@ export default function BasicModal() {
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
             <div className={styles.modalContainer}>
+              {successMessage && <p>{successMessage}</p>}
               <div className={style.container}>
                 <div className={styles.containerHead}>
                   <h2>Регистрация участников</h2>
