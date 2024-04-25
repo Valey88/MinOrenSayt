@@ -40,18 +40,19 @@ export default function Header({ city, setCity, rayon, setRayon }) {
                 Галерея
               </Link>
             </li>
-            <li className="headerNavBtn">
-              <Modal
-                city={city}
-                setCity={setCity}
-                rayon={rayon}
-                setRayon={setRayon}
-              />
-            </li>
+            <li className="headerNavBtn"></li>
           </ul>
         </nav>
         <div className="regBtn">
-          <Modal />
+          <button
+            className="regButton"
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href = "/registration";
+            }}
+          >
+            Регистрация
+          </button>
         </div>
         <div className="headerMenu">
           <button onClick={() => setOpen(!isOpen)}>

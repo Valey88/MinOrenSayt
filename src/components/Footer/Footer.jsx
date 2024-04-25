@@ -57,12 +57,13 @@ export default function Footer({ city, setCity, rayon, setRayon }) {
             </a>
           </li>
           <li>
-            <Modal
-              city={city}
-              setCity={setCity}
-              rayon={rayon}
-              setRayon={setRayon}
-            />
+            <button
+              className="regButton"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = "/registration";
+              }}
+            >Регистрация</button>
           </li>
         </ul>
       </div>

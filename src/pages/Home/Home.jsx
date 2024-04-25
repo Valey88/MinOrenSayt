@@ -24,7 +24,6 @@ import {
 import { Modal } from "@mui/material";
 
 const Home = () => {
-  
   return (
     <div className={style.Home}>
       <div className={style.all}>
@@ -49,7 +48,14 @@ const Home = () => {
               <div className={style.HomeFooterDescription}>
                 <div className={style.HomeFooterDescriptionItem}>
                   <h2>Форум труда</h2>
-                  <button>Принять участие</button>
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.location.href = "/registration";
+                    }}
+                  >
+                    Принять участие
+                  </button>
                 </div>
                 <div>
                   <h2>«Живи и работай в Оренбуржье!»</h2>
