@@ -79,7 +79,7 @@ export default function BasicModal() {
     { id: parseInt("9"), name: "Оренбург" },
     { id: parseInt("10"), name: "Оренбург" },
   ];
-
+  console.log(answers);
 
   const handleSelectAnswer = (answer) => {
     setSelectedAnswers((prevSelectedAnswers) => {
