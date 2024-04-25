@@ -24,6 +24,7 @@ import {
 import { Modal } from "@mui/material";
 
 const Home = () => {
+  
   return (
     <div className={style.Home}>
       <div className={style.all}>

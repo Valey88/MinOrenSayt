@@ -5,7 +5,7 @@ import { rayons } from "./data/dateList";
 // import { answers } from "./data/aswersList";
 import { useAddUsersMutation } from "../../redux/OrenApi";
 
-const Register = () => {
+const Register = ({ onUserRegistrationChange }) => {
   const [selectedAnswers, setSelectedAnswers] = useState([]);
   const [city, setCity] = useState("");
   const [rayon, setRayon] = useState("");
@@ -17,8 +17,11 @@ const Register = () => {
   const [postUser] = useAddUsersMutation();
 
   const answers = [
-    { id: parseInt("1"), name: "Хорошо там, где мы есть!" },
-    { id: parseInt("2"), name: "Обыкновенное чудо" },
+    {
+      id: parseInt("1"),
+      name: "Пленарная сессия «Вектор развития кадровой политики: новые инструменты и возможности»",
+    },
+    { id: parseInt("2"), name: "Сессия «Цифровое будущее охраны труда»" },
     {
       id: parseInt("3"),
       name: "Тренинг «Иван Васильевич не меняет профессию»",
@@ -29,19 +32,25 @@ const Register = () => {
     },
     {
       id: parseInt("5"),
-      name: "Невероятные приключения в использовании законодательства по охране труда",
+      name: "Пленарная сессия «Основные акценты в изменениях трудового законодательства»",
     },
     {
       id: parseInt("6"),
-      name: "Добро пожаловать в IT, или посторонним вход воспрещен!",
+      name: "Сессия «IT-cервисы в решении кадровых задач»",
     },
-    { id: parseInt("7"), name: "Движение вверх" },
+    { id: parseInt("7"), name: "Дискуссионная сессия «Встреча без галстуков»" },
     {
       id: parseInt("8"),
       name: "Концертная программа «Открытие третьего трудового семестра»",
     },
-    { id: parseInt("9"), name: "Оренбург" },
-    { id: parseInt("10"), name: "Оренбург" },
+    {
+      id: parseInt("9"),
+      name: "Дискуссионная сессия «Охрана труда в бюджетных организациях»",
+    },
+    {
+      id: parseInt("10"),
+      name: "Сессия «Особенности расследования несчастных случаев на производстве»",
+    },
   ];
 
   const handleSelectAnswer = (answer) => {
@@ -96,6 +105,9 @@ const Register = () => {
       setRayon("");
       setSelectedAnswers([]);
     }
+  };
+  const handleButtonClick = () => {
+    onUserRegistrationChange(true);
   };
 
   return (
@@ -210,7 +222,15 @@ const Register = () => {
             </ul> */}
         </div>
         <div className={styles.modalItemInput}>
-          <button className={styles.modalButton} onClick={addNewUsers}>
+          <button
+            className={styles.modalButton}
+            onClick={(e) => {
+              addNewUsers();
+              handleButtonClick();
+              e.preventDefault();
+              window.location.href = "/";
+            }}
+          >
             Регистрация
           </button>
         </div>

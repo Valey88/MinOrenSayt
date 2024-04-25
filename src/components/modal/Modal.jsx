@@ -51,7 +51,6 @@ export default function BasicModal() {
   const [organization, setOrganization] = useState("");
   const [post, setPost] = useState("");
   const [postUser] = useAddUsersMutation();
-  const [successMessage, setSuccessMessage] = useState("");
 
   const answers = [
     {
@@ -133,26 +132,16 @@ export default function BasicModal() {
         city,
         rayon,
         selectedAnswers,
-      })
-        .unwrap()
-        .then(() => {
-          clearInputs();
-          setSuccessMessage(
-            "Вы успешно зарегистрировались проверьте email на наличие письма с qr-cod!"
-          );
-        });
+      }).unwrap();
+      setFio("");
+      setEmail("");
+      setPhoneNumber("");
+      setOrganization("");
+      setPost("");
+      setCity("");
+      setRayon("");
+      setSelectedAnswers([]);
     }
-  };
-
-  const clearInputs = () => {
-    setFio("");
-    setEmail("");
-    setPhoneNumber("");
-    setOrganization("");
-    setPost("");
-    setCity("");
-    setRayon("");
-    setSelectedAnswers([]);
   };
 
   return (
@@ -169,7 +158,6 @@ export default function BasicModal() {
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
             <div className={styles.modalContainer}>
-              {successMessage && <p>{successMessage}</p>}
               <div className={style.container}>
                 <div className={styles.containerHead}>
                   <h2>Регистрация участников</h2>
@@ -280,7 +268,14 @@ export default function BasicModal() {
                   </ul> */}
                 </div>
                 <div className={styles.modalItemInput}>
-                  <button className={styles.modalButton} onClick={addNewUsers}>
+                  <button
+                    className={styles.modalButton}
+                    onClick={(e) => {
+                      addNewUsers();
+                      e.preventDefault();
+                      window.location.href = "/";
+                    }}
+                  >
                     Регистрация
                   </button>
                 </div>

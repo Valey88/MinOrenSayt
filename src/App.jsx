@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 import "./App.css";
 import Header from "./components/Header/Header";
@@ -9,12 +9,31 @@ import Footer from "./components/Footer/Footer";
 import Register from "./pages/Register/Register";
 
 function App() {
+  const [isUserRegistered, setIsUserRegistered] = useState(false);
+  const handleUserRegistrationChange = useCallback((newValue) => {
+    setIsUserRegistered(newValue);
+  }, []);
+  {
+    isUserRegistered &&
+      alert(
+        "Пользователь успешно зарегистрирован, мы отправим вам письмо на email с информацией о мероприятии"
+      );
+  }
+  // console.log(isUserRegistered);
   return (
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/registration" element={<Register />} />
+        <Route
+          path="/"
+          element={<Home />}
+        />
+        <Route
+          path="/registration"
+          element={
+            <Register onUserRegistrationChange={handleUserRegistrationChange} />
+          }
+        />
         {/* <Route path="/Booking" element={<Booking />} />
         <Route path="/CreateRooms" element={<CreateRooms />} />
         <Route path="/DeleteImage" element={<DeleteImage />} />  */}
