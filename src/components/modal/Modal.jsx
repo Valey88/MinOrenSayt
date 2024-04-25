@@ -7,7 +7,6 @@ import { useState } from "react";
 import { rayons } from "./datalist";
 import styles from "./Modal.module.css";
 import { useAddUsersMutation } from "../../redux/OrenApi";
-// import CheckBox from "../CheckBox/CheckBox";
 
 const style = {
   position: "absolute",
@@ -90,6 +89,7 @@ export default function BasicModal() {
       name: "Сессия «Особенности расследования несчастных случаев на производстве»",
     },
   ];
+  console.log(answers);
 
   const handleSelectAnswer = (answer) => {
     setSelectedAnswers((prevSelectedAnswers) => {
@@ -239,26 +239,31 @@ export default function BasicModal() {
                     {rayons.map((rayon) => (
                       <option value={rayon.name1}>{rayon.name2}</option>
                     ))}
-                    {/* <option value="">Выберите район</option>
-                    <option value="г. Оренбург">г. Оренбург</option>
-                    <option value="г. Бузулук">г. Бугуруслан</option>
-                    <option value="г. Медногорск">г. Медногорск</option>
-                    <option value="г. Новотроицк">г. Новотроицк</option>
-                    <option value="г. Орск">г. Орск</option> */}
                   </select>
                 </div>
-                <div>
-                  <h1>Выбранные ответы:</h1>
-                  <ul>
-                    {selectedAnswers.map((selectedId) => {
-                      const selectedAnswer = answers.find(
-                        (answer) => answer.id === selectedId
-                      );
-                      return <li key={selectedId}>{selectedAnswer?.name}</li>;
-                    })}
-                  </ul>
-
-                  <h2>Доступные варианты ответов:</h2>
+                <div className={styles.dropidropi}>
+                  <details className={styles.dropdown}>
+                    <summary role="button">
+                      <a className={styles.button}>
+                        Выберите события <img src="public\down.svg" alt="" />
+                      </a>
+                    </summary>
+                    <ul>
+                      {answers.map((answer) => (
+                        <li key={answer.id}>
+                          <label>
+                            <input
+                              type="checkbox"
+                              onChange={() => handleSelectAnswer(answer)}
+                              checked={selectedAnswers.includes(answer.id)}
+                            />
+                            {answer.name}
+                          </label>
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
+                  {/* <h2>Доступные варианты ответов:</h2>
                   <ul>
                     {answers.map((answer) => (
                       <li key={answer.id}>
@@ -272,7 +277,7 @@ export default function BasicModal() {
                         </label>
                       </li>
                     ))}
-                  </ul>
+                  </ul> */}
                 </div>
                 <div className={styles.modalItemInput}>
                   <button className={styles.modalButton} onClick={addNewUsers}>
