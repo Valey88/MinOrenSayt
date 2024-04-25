@@ -1,4 +1,4 @@
-import {useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import "./Header.css";
 import { useState } from "react";
 import Modal from "../modal/Modal";
@@ -11,9 +11,9 @@ export default function Header({ city, setCity, rayon, setRayon }) {
     <>
       <header className="header" id="main">
         <div className="headerLogo">
-          <Link to="/">
+          <a href="/">
             <img src="/public/Logo.svg" alt="" />
-          </Link>
+          </a>
         </div>
         <nav
           className={`headerNav ${isOpen ? "active" : ""}`}
@@ -21,16 +21,24 @@ export default function Header({ city, setCity, rayon, setRayon }) {
         >
           <ul className="headerNavList">
             <li className="headerNavItem">
-              <Link to="purpose" smooth={true}>Цели форума</Link>
+              <Link to="purpose" smooth={true}>
+                Цели форума
+              </Link>
             </li>
             <li className="headerNavItem">
-              <Link to="event" smooth={true}>Программа мероприятий</Link>
+              <Link to="event" smooth={true}>
+                Программа мероприятий
+              </Link>
             </li>
             <li className="headerNavItem">
-              <Link to="map" smooth={true}>Карта мероприятий </Link>
+              <Link to="map" smooth={true}>
+                Карта мероприятий{" "}
+              </Link>
             </li>
             <li className="headerNavItem">
-              <Link to="gallery" smooth={true}>Галерея</Link>
+              <Link to="gallery" smooth={true}>
+                Галерея
+              </Link>
             </li>
             <li className="headerNavBtn">
               <Modal

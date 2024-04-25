@@ -6,13 +6,13 @@ export default function Footer({ city, setCity, rayon, setRayon }) {
   const [isOpen, setOpen] = useState(false);
   return (
     <footer>
-      <a href="">
+      <a href="/">
         <img className="footerLogo" src="/public/Logo.svg" alt=""></img>
       </a>
       <div className="navigation">
         <ul>
           <li>
-            <Link to="main" smooth={true} >
+            <Link to="main" smooth={true}>
               Главная
             </Link>
           </li>
