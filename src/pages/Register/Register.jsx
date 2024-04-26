@@ -52,7 +52,15 @@ const Register = ({ onUserRegistrationChange }) => {
       name: "Сессия «Особенности расследования несчастных случаев на производстве»",
     },
   ];
+  // const answers1 = [
  
+  // ];
+  // const answers2 = [
+    
+  // ];
+  // const answers3 = [
+   
+  // ];
 
   const handleSelectAnswer = (answer) => {
     setSelectedAnswers((prevSelectedAnswers) => {
