@@ -205,21 +205,6 @@ const Register = ({ onUserRegistrationChange }) => {
               ))}
             </ul>
           </details>
-          {/* <h2>Доступные варианты ответов:</h2>
-            <ul>
-              {answers.map((answer) => (
-                <li key={answer.id}>
-                  <label>
-                    <input
-                      type="checkbox"
-                      onChange={() => handleSelectAnswer(answer)}
-                      checked={selectedAnswers.includes(answer.id)}
-                    />
-                    {answer.name}
-                  </label>
-                </li>
-              ))}
-            </ul> */}
         </div>
         <div className={styles.modalItemInput}>
           <button

@@ -127,7 +127,7 @@ a.button {
   box-sizing: border-box;
   z-index: 2;
   list-style: none;
-  height: 12rem;
+  /* height: 12rem; */
   overflow-y: scroll;
   margin-top: 2rem;
   width: 500px;
