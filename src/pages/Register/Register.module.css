@@ -127,6 +127,11 @@ a.button {
 }
 .dropdown ul {
   list-style: none;
+<<<<<<< HEAD
+  /* height: 12rem; */
+  overflow-y: scroll;
+=======
+>>>>>>> f5f0a4125975d0b94818d811b544ab3494a68e49
   margin-top: 2rem;
   text-wrap: balance;
   width: 52rem;

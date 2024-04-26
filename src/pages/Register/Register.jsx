@@ -56,6 +56,7 @@ const Register = ({ onUserRegistrationChange }) => {
     },
   ];
 
+
   const handleSelectAnswer = (answer) => {
     setSelectedAnswers((prevSelectedAnswers) => {
       if (prevSelectedAnswers.includes(answer.id)) {
@@ -223,21 +224,6 @@ const Register = ({ onUserRegistrationChange }) => {
               ))}
             </ul>
           </details>
-          {/* <h2>Доступные варианты ответов:</h2>
-            <ul>
-              {answers.map((answer) => (
-                <li key={answer.id}>
-                  <label>
-                    <input
-                      type="checkbox"
-                      onChange={() => handleSelectAnswer(answer)}
-                      checked={selectedAnswers.includes(answer.id)}
-                    />
-                    {answer.name}
-                  </label>
-                </li>
-              ))}
-            </ul> */}
         </div>
         <button
           className={styles.modalButton}
