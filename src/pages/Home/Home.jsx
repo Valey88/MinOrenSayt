@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./Home.module.css";
-import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
+import { YMaps, Map, GeoObject, Placemark } from "@pbe/react-yandex-maps";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./styles.css";
 import EventBlock from "/src/components/EventBlock/EventBlock";
@@ -22,6 +22,15 @@ import {
 } from "swiper/modules";
 // import { Modal } from "../../components/modal/Modal";
 import { Modal } from "@mui/material";
+
+const partners = [
+  {
+    path: "public/Gazprom.svg",
+  },
+  {
+    path: "public/emblem.svg",
+  },
+];
 
 const Home = () => {
   return (
@@ -64,6 +73,7 @@ const Home = () => {
             </div>
           </div>
         </div>
+
         <div className={style.aboutSection} id="purpose">
           <div className={style.heading}>
             <h2>Цели форума</h2>
@@ -152,18 +162,21 @@ const Home = () => {
               <YMaps>
                 <Map
                   defaultState={{ center: [51.762413, 55.11635], zoom: 16 }}
-                  width={-1}
-                  height={500}
+                  className={style.map}
                 >
                   <Placemark
+                    properties={{ hintContent: "hint" }}
                     options={{
                       iconLayout: "default#image",
                       iconImageHref: "/public/logoMark.svg",
                       iconImageSize: [60, 60],
                       iconImageOffset: [-30, -60],
+              
                     }}
                     defaultGeometry={[51.763885, 55.119018]}
+                    
                   />
+                  
                   <Placemark
                     options={{
                       iconLayout: "default#image",
@@ -195,11 +208,11 @@ const Home = () => {
               </YMaps>
             </div>
             <div className={style.underMap}>
-              <p>ОГАУ</p>
-              <p>ДКиС “Газовик”</p>
+              <h1>ДКиС “Газовик”</h1>
             </div>
           </div>
         </div>
+
         <div className={style.sliderSection} id="gallery">
           <div className={style.heading}>
             <h2>Галерея</h2>
@@ -244,6 +257,7 @@ const Home = () => {
             </Swiper>
           </div>
         </div>
+
         <div className={style.partnerSection}>
           <div className={style.heading}>
             <h2>Партнёры</h2>
@@ -251,16 +265,9 @@ const Home = () => {
           <div className={style.Center}>
             <div className={style.partner}>
               <Marquee speed={100} pauseOnClick="true">
-                <img
-                  className={style.partnerIcon}
-                  src="public\Gazprom.svg"
-                  alt=""
-                />
-                <img
-                  className={style.partnerIcon}
-                  src="public\emblem.svg"
-                  alt=""
-                />
+                {partners.map((partner) => (
+                  <img className={style.partnerIcon} src={partner.path} />
+                ))}
               </Marquee>
             </div>
           </div>
