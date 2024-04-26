@@ -26,14 +26,10 @@ const Register = ({ onUserRegistrationChange }) => {
       id: parseInt("3"),
       name: "Тренинг «Иван Васильевич не меняет профессию»",
     },
-  ];
-  const answers1 = [
     {
       id: parseInt("4"),
       name: "Торжественная церемония награждения победителей конкурсов",
     },
-  ];
-  const answers2 = [
     {
       id: parseInt("5"),
       name: "Пленарная сессия «Основные акценты в изменениях трудового законодательства»",
@@ -43,8 +39,6 @@ const Register = ({ onUserRegistrationChange }) => {
       name: "Сессия «IT-cервисы в решении кадровых задач»",
     },
     { id: parseInt("7"), name: "Дискуссионная сессия «Встреча без галстуков»" },
-  ];
-  const answers3 = [
     {
       id: parseInt("8"),
       name: "Концертная программа «Открытие третьего трудового семестра»",
@@ -58,6 +52,7 @@ const Register = ({ onUserRegistrationChange }) => {
       name: "Сессия «Особенности расследования несчастных случаев на производстве»",
     },
   ];
+
 
   const handleSelectAnswer = (answer) => {
     setSelectedAnswers((prevSelectedAnswers) => {
