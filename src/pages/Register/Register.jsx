@@ -26,10 +26,14 @@ const Register = ({ onUserRegistrationChange }) => {
       id: parseInt("3"),
       name: "Тренинг «Иван Васильевич не меняет профессию»",
     },
+  ];
+  const answers1 = [
     {
       id: parseInt("4"),
       name: "Торжественная церемония награждения победителей конкурсов",
     },
+  ];
+  const answers2 = [
     {
       id: parseInt("5"),
       name: "Пленарная сессия «Основные акценты в изменениях трудового законодательства»",
@@ -39,6 +43,8 @@ const Register = ({ onUserRegistrationChange }) => {
       name: "Сессия «IT-cервисы в решении кадровых задач»",
     },
     { id: parseInt("7"), name: "Дискуссионная сессия «Встреча без галстуков»" },
+  ];
+  const answers3 = [
     {
       id: parseInt("8"),
       name: "Концертная программа «Открытие третьего трудового семестра»",
@@ -116,14 +122,29 @@ const Register = ({ onUserRegistrationChange }) => {
         <div className={styles.containerHead}>
           <h2>Регистрация участников</h2>
         </div>
+        {/* Сделать поля */}
         <div className={styles.modalItemInput}>
           <img src="/public/User.svg" alt="" />
-          <input
-            className={styles.modalInput}
-            type="text"
-            placeholder="ФИО"
-            onChange={(e) => setFio(e.target.value)}
-          />
+          <div className={styles.column}>
+            <input
+              className={styles.modalInput}
+              type="text"
+              placeholder="Фамилия"
+              onChange={(e) => setFio(e.target.value)}
+            />
+            <input
+              className={styles.modalInput}
+              type="text"
+              placeholder="Имя"
+              onChange={(e) => setFio(e.target.value)}
+            />
+            <input
+              className={styles.modalInput}
+              type="text"
+              placeholder="Отчество (Если есть)"
+              onChange={(e) => setFio(e.target.value)}
+            />
+          </div>
         </div>
         <div className={styles.modalItemInput}>
           <img src="/public/Mail.svg" alt="" />
@@ -195,7 +216,7 @@ const Register = ({ onUserRegistrationChange }) => {
                 <li key={answer.id}>
                   <label>
                     <input
-                      type="checkbox"
+                      type="radio"
                       onChange={() => handleSelectAnswer(answer)}
                       checked={selectedAnswers.includes(answer.id)}
                     />
@@ -221,19 +242,17 @@ const Register = ({ onUserRegistrationChange }) => {
               ))}
             </ul> */}
         </div>
-        <div className={styles.modalItemInput}>
-          <button
-            className={styles.modalButton}
-            onClick={(e) => {
-              addNewUsers();
-              handleButtonClick();
-              e.preventDefault();
-              window.location.href = "/";
-            }}
-          >
-            Регистрация
-          </button>
-        </div>
+        <button
+          className={styles.modalButton}
+          onClick={(e) => {
+            addNewUsers();
+            handleButtonClick();
+            e.preventDefault();
+            window.location.href = "/";
+          }}
+        >
+          Регистрация
+        </button>
       </div>
     </div>
   );
