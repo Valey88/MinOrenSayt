@@ -17,41 +17,54 @@ const Register = ({ onUserRegistrationChange }) => {
   const [postUser] = useAddUsersMutation();
 
   const answers = [
-    {
+    [{
       id: parseInt("1"),
+      type: 1,
       name: "Пленарная сессия «Вектор развития кадровой политики: новые инструменты и возможности»",
     },
-    { id: parseInt("2"), name: "Сессия «Цифровое будущее охраны труда»" },
+    { id: parseInt("2"), type: 1, name: "Сессия «Цифровое будущее охраны труда»" },
     {
       id: parseInt("3"),
+      type: 1,
       name: "Тренинг «Иван Васильевич не меняет профессию»",
     },
     {
       id: parseInt("4"),
+      type: 1,
       name: "Торжественная церемония награждения победителей конкурсов",
-    },
-    {
+    }],
+    [{
       id: parseInt("5"),
+      type: 2,
       name: "Пленарная сессия «Основные акценты в изменениях трудового законодательства»",
     },
     {
       id: parseInt("6"),
+      type: 2,
       name: "Сессия «IT-cервисы в решении кадровых задач»",
     },
-    { id: parseInt("7"), name: "Дискуссионная сессия «Встреча без галстуков»" },
-
-    {
-      id: parseInt("8"),
-      name: "Концертная программа «Открытие третьего трудового семестра»",
-    },
-    {
-      id: parseInt("9"),
-      name: "Дискуссионная сессия «Охрана труда в бюджетных организациях»",
-    },
-    {
-      id: parseInt("10"),
-      name: "Сессия «Особенности расследования несчастных случаев на производстве»",
-    },
+    { 
+      id: parseInt("7"), 
+      type: 2,
+      name: "Дискуссионная сессия «Встреча без галстуков»" 
+    }],
+    [
+      {
+        id: parseInt("8"),
+        type: 3,
+        name: "Концертная программа «Открытие третьего трудового семестра»",
+      },
+      {
+        id: parseInt("9"),
+        type: 3,
+        name: "Дискуссионная сессия «Охрана труда в бюджетных организациях»",
+      },
+      {
+        id: parseInt("10"),
+        type: 3,
+        name: "Сессия «Особенности расследования несчастных случаев на производстве»",
+      }
+    ]
   ];
   // const answers1 = [
  
@@ -216,17 +229,26 @@ const Register = ({ onUserRegistrationChange }) => {
               </a>
             </summary>
             <ul>
-              {answers.map((answer) => (
-                <li key={answer.id}>
-                  <label>
-                    <input
-                      type="radio"
-                      onChange={() => handleSelectAnswer(answer)}
-                      checked={selectedAnswers.includes(answer.id)}
-                    />
-                    {answer.name}
-                  </label>
-                </li>
+              {
+              answers.map((answer) => (
+                answer.map((item) => {
+                  return (
+                    <div>
+                      <li key={item.id}>
+                      <label>
+                        <input
+                          type="radio"
+                          name={'radAnswer_'+item.type} 
+                          value={item.id}
+                          onChange={() => handleSelectAnswer(item)}
+                          checked={selectedAnswers.includes(item.id)}
+                        />
+                        {item.name}
+                      </label>
+                    </li>
+                    </div>
+                  )
+                })
               ))}
             </ul>
           </details>
@@ -237,7 +259,7 @@ const Register = ({ onUserRegistrationChange }) => {
             addNewUsers();
             handleButtonClick();
             e.preventDefault();
-            window.location.href = "/";
+            // window.location.href = "/";
           }}
         >
           Регистрация
