@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "./styles.css";
 import EventBlock from "/src/components/EventBlock/EventBlock";
 import Marquee from "react-fast-marquee";
+import Countdown from "react-countdown";
 
 // Import Swiper styles
 import "swiper/css";
@@ -32,6 +33,23 @@ const partners = [
   },
 ];
 
+const Completionist = () => <span>Регистрация завершена!</span>;
+const renderer = ({ days, hours, minutes, seconds, completed }) => {
+  if (completed) {
+    return <Completionist />;
+  } else {
+    return (
+      <p>
+        До конца регистрации осталось:
+        <br />
+        <strong>
+          {days} дн {hours} ч {minutes} мин {seconds} с
+        </strong>
+      </p>
+    );
+  }
+};
+
 const Home = () => {
   return (
     <div className={style.Home}>
@@ -52,6 +70,12 @@ const Home = () => {
                 <p>
                   Оренбург <br />
                   ДКиС «Газовик»
+                </p>
+                <p>
+                  <Countdown
+                    date={Date.parse("30 Aug 2024 19:00:00 GMT")}
+                    renderer={renderer}
+                  />
                 </p>
               </div>
               <div className={style.HomeFooterDescription}>
@@ -153,6 +177,7 @@ const Home = () => {
             </div>
           </div>
         </div>
+
         <div className={style.mapSection} id="map">
           <div className={style.heading}>
             <h2>Карта мероприятий</h2>
@@ -163,21 +188,45 @@ const Home = () => {
                 <Map
                   defaultState={{ center: [51.762413, 55.11635], zoom: 16 }}
                   className={style.map}
+                  modules={["geoObject.addon.balloon", "geoObject.addon.hint"]}
                 >
                   <Placemark
-                    properties={{ hintContent: "hint" }}
+                    properties={{
+                      hintContent: "ДКиС «Газовик»",
+                      balloonContentHeader: "Площадки проведения мероприятий:",
+                      balloonContentBody: `
+                      <ul>
+                        <li>Холл ДКиС «Газовик»</li>
+                        <li>Большой театрально-концертный зал</li>
+                        <li>Малый театрально-концертный зал</li>
+                        <li>Зал совещаний</li><li>Зимний сад</li>
+                        <li>Стадион ДКиС «Газовик»</li>
+                      </ul>
+                      `,
+                    }}
                     options={{
                       iconLayout: "default#image",
                       iconImageHref: "/public/logoMark.svg",
                       iconImageSize: [60, 60],
                       iconImageOffset: [-30, -60],
-              
                     }}
                     defaultGeometry={[51.763885, 55.119018]}
-                    
                   />
-                  
+
                   <Placemark
+                    properties={{
+                      hintContent: "ОГАУ,  «Город профессий»",
+                      balloonContentHeader: "Площадки проведения мероприятий:",
+                      balloonContentBody: `
+                      <ul>
+                        <li>Площадка «Комплексная безопасность»</li>
+                        <li>Площадка «Экономика и право»</li>
+                        <li>Площадка «Ветеринарная медицины»</li>
+                        <li>Площадка «Профессия инженер»</li>
+                        <li>Площадка «Молодежная политика»</li>
+                      </ul>
+                      `,
+                    }}
                     options={{
                       iconLayout: "default#image",
                       iconImageHref: "/public/logoMark.svg",
@@ -187,6 +236,19 @@ const Home = () => {
                     defaultGeometry={[51.763149, 55.115344]}
                   />
                   <Placemark
+                    properties={{
+                      hintContent: "ОГАУ,  «Город профессий»",
+                      balloonContentHeader: "Площадки проведения мероприятий:",
+                      balloonContentBody: `
+                      <ul>
+                        <li>Площадка «Комплексная безопасность»</li>
+                        <li>Площадка «Экономика и право»</li>
+                        <li>Площадка «Ветеринарная медицины»</li>
+                        <li>Площадка «Профессия инженер»</li>
+                        <li>Площадка «Молодежная политика»</li>
+                      </ul>
+                      `,
+                    }}
                     options={{
                       iconLayout: "default#image",
                       iconImageHref: "/public/logoMark.svg",
@@ -196,6 +258,19 @@ const Home = () => {
                     defaultGeometry={[51.762709, 55.111921]}
                   />
                   <Placemark
+                    properties={{
+                      hintContent: "ОГАУ,  «Город профессий»",
+                      balloonContentHeader: "Площадки проведения мероприятий:",
+                      balloonContentBody: `
+                      <ul>
+                        <li>Площадка «Комплексная безопасность»</li>
+                        <li>Площадка «Экономика и право»</li>
+                        <li>Площадка «Ветеринарная медицины»</li>
+                        <li>Площадка «Профессия инженер»</li>
+                        <li>Площадка «Молодежная политика»</li>
+                      </ul>
+                      `,
+                    }}
                     options={{
                       iconLayout: "default#image",
                       iconImageHref: "/public/logoMark.svg",
@@ -208,7 +283,8 @@ const Home = () => {
               </YMaps>
             </div>
             <div className={style.underMap}>
-              <h1>ДКиС “Газовик”</h1>
+              <p>ДКиС «Газовик»</p>
+              <p>ОГАУ, «Город профессий»</p>
             </div>
           </div>
         </div>

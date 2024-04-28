@@ -22,7 +22,7 @@
   display: flex;
   justify-content: space-between;
   font-size: 8rem;
-  padding-bottom: 8rem;
+  padding-bottom: 7rem;
 }
 
 /* * Home section * */
@@ -81,7 +81,7 @@
   grid-gap: 5rem;
 }
 .HomeFooterDescription h2 {
-  font-size: 8.55rem;
+  font-size: 8.2rem;
 }
 .HomeFooterDescriptionItem button {
   background: none;
@@ -218,8 +218,11 @@
   height: 100%;
 }
 .underMap {
-  font-size: 3rem;
-  margin-top: 2rem;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 2.5rem;
+  margin-top: 1.5rem;
 }
 
 [class*="ymaps-2-1-79-copyright ymaps-2-1-79-copyright_logo_no"] {
@@ -280,7 +283,7 @@
     font-size: 2.5rem;
   }
   .HomeHeaderBlock h2 {
-    font-size: 4.2rem;
+    font-size: 4rem;
   }
   .HomeFooterDescription {
     padding-top: 3rem;
@@ -343,7 +346,7 @@
     font-size: 1.5rem;
   }
   .HomeHeaderBlock h2 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
   .HomeHeaderBlock {
     height: max-content;
@@ -421,7 +424,7 @@
     font-size: 1.2rem;
   }
   .HomeHeaderBlock h2 {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
   .HomeHeaderBlock {
     height: max-content;
