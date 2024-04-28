@@ -6,6 +6,19 @@ import "./styles.css";
 import EventBlock from "/src/components/EventBlock/EventBlock";
 import Marquee from "react-fast-marquee";
 import Countdown from "react-countdown";
+import { YandexDisk } from "yandex-disk";
+
+//? https://stackoverflow.com/questions/45621506/yandex-disk-api-cant-make-request-with-access-token-node-js
+//? https://oauth.yandex.ru/verification_code#access_token=y0_AgAAAABXDDJgAAu0RwAAAAEDXSp_AADjrTfk9cRHhaCH4WTB7CmGi6PWpg&token_type=bearer&expires_in=31533775&cid=uvhk86yf6daxn87286afc48rqw
+//? https://disk.yandex.ru/client/disk/resources
+//? https://oauth.yandex.ru/client/3e2b9d3c5b6749b6b3ea7611d5f6547c
+//? https://github.com/Kolyaj/yandex-disk/blob/master/readme.md
+
+const disk = new YandexDisk(
+  "y0_AgAAAABXDDJgAAu0RwAAAAEDXSp_AADjrTfk9cRHhaCH4WTB7CmGi6PWpg"
+);
+console.log("disk", disk);
+disk.cd("/resources");
 
 // Import Swiper styles
 import "swiper/css";

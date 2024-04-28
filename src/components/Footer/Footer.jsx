@@ -1,6 +1,5 @@
 import "./Footer.css";
 import { useState } from "react";
-import Modal from "../modal/Modal";
 import { Link } from "react-scroll";
 export default function Footer({ city, setCity, rayon, setRayon }) {
   const [isOpen, setOpen] = useState(false);
