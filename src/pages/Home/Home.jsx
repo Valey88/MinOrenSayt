@@ -6,19 +6,12 @@ import "./styles.css";
 import EventBlock from "/src/components/EventBlock/EventBlock";
 import Marquee from "react-fast-marquee";
 import Countdown from "react-countdown";
-import { YandexDisk } from "yandex-disk";
 
 //? https://stackoverflow.com/questions/45621506/yandex-disk-api-cant-make-request-with-access-token-node-js
 //? https://oauth.yandex.ru/verification_code#access_token=y0_AgAAAABXDDJgAAu0RwAAAAEDXSp_AADjrTfk9cRHhaCH4WTB7CmGi6PWpg&token_type=bearer&expires_in=31533775&cid=uvhk86yf6daxn87286afc48rqw
 //? https://disk.yandex.ru/client/disk/resources
 //? https://oauth.yandex.ru/client/3e2b9d3c5b6749b6b3ea7611d5f6547c
 //? https://github.com/Kolyaj/yandex-disk/blob/master/readme.md
-
-const disk = new YandexDisk(
-  "y0_AgAAAABXDDJgAAu0RwAAAAEDXSp_AADjrTfk9cRHhaCH4WTB7CmGi6PWpg"
-);
-console.log("disk", disk);
-disk.cd("/resources");
 
 // Import Swiper styles
 import "swiper/css";
@@ -63,6 +56,26 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
   }
 };
 
+let arr = [];
+const directoryPath = "/new/";
+fetch("https://cloud-api.yandex.net/v1/disk/resources/files", {
+  method: "GET",
+  headers: {
+    Authorization:
+      "OAuth y0_AgAAAABXDDJgAAu0RwAAAAEDXSp_AADjrTfk9cRHhaCH4WTB7CmGi6PWpg",
+  },
+})
+  .then((response) => response.json())
+  .then((data) => {
+    data.items.forEach((item) => {
+      arr.push(item.file);
+    });
+  })
+  .catch((error) => {
+    console.error("Ошибка:", error);
+  });
+console.log(arr);
+
 const Home = () => {
   return (
     <div className={style.Home}>
@@ -79,6 +92,9 @@ const Home = () => {
                 </div>
               </div>
               <div className={style.HomeHeaderDescription}>
+                {arr.map((arr) => (
+                  <h2>{arr.path}</h2>
+                ))}
                 <h2>22 - 23 мая</h2>
                 <p>
                   Оренбург <br />
@@ -322,21 +338,12 @@ const Home = () => {
               modules={[Pagination, Navigation, Autoplay]}
               className="mySwiper"
             >
-              <SwiperSlide>
-                <img src="/public/image 17.png" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/public/image 17.png" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/public/image 17.png" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/public/image 17.png" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/public/image 17.png" />
-              </SwiperSlide>
+              {arr.map((arr, index) => (
+                <SwiperSlide>
+                  <img key={index} src={arr} />
+                </SwiperSlide>
+              ))}
+
               <SwiperSlide>
                 <img src="/public/image 17.png" />
               </SwiperSlide>
