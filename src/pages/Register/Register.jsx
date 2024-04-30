@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./Register.module.css";
 import { useState } from "react";
 import { rayons } from "./data/dateList";
-// import { answers } from "./data/aswersList";
 import { useAddUsersMutation } from "../../redux/OrenApi";
 
 const Register = ({ onUserRegistrationChange }) => {
@@ -21,6 +20,48 @@ const Register = ({ onUserRegistrationChange }) => {
   const [error, setError] = useState("");
 
   const answers = [
+<<<<<<< HEAD
+=======
+    [
+      {
+        id: parseInt("1"),
+        type: 1,
+        name: "Пленарная сессия «Вектор развития кадровой политики: новые инструменты и возможности» - 10.30-12.00",
+      },
+      {
+        id: parseInt("2"),
+        type: 1,
+        name: "Сессия «Цифровое будущее охраны труда» - 10.30-12.00",
+      },
+      {
+        id: parseInt("3"),
+        type: 1,
+        name: "Тренинг «Иван Васильевич не меняет профессию» - 10.30-12.00",
+      },
+      {
+        id: parseInt("4"),
+        type: 1,
+        name: "Торжественная церемония награждения победителей конкурсов - 12.00-13.00",
+      },
+    ],
+    [
+      {
+        id: parseInt("5"),
+        type: 2,
+        name: "Пленарная сессия «Основные акценты в изменениях трудового законодательства» - 13.00-15.00",
+      },
+      {
+        id: parseInt("6"),
+        type: 2,
+        name: "Сессия «IT-cервисы в решении кадровых задач» - 13.00-15.00",
+      },
+      {
+        id: parseInt("7"),
+        type: 2,
+        name: "Дискуссионная сессия «Встреча без галстуков» - 13.00-15.00",
+      },
+    ],
+>>>>>>> 6745e7ba879c2af40732e852aa926f4fc7c06d46
     [
       {
         id: parseInt("1"),
@@ -60,17 +101,21 @@ const Register = ({ onUserRegistrationChange }) => {
       {
         id: parseInt("8"),
         type: 3,
-        name: "Концертная программа «Открытие третьего трудового семестра»",
+        name: "Концертная программа «Открытие третьего трудового семестра» - 15.00-17.00",
       },
       {
         id: parseInt("9"),
         type: 3,
-        name: "Дискуссионная сессия «Охрана труда в бюджетных организациях»",
+        name: "Дискуссионная сессия «Охрана труда в бюджетных организациях» - 15.00-17.00",
       },
       {
         id: parseInt("10"),
         type: 3,
+<<<<<<< HEAD
         name: "Сессия «Особенности расследования несчастных случаев на производстве»",
+=======
+        name: "Сессия «Особенности расследования несчастных случаев на производстве» - 15.00-17.00",
+>>>>>>> 6745e7ba879c2af40732e852aa926f4fc7c06d46
       },
     ],
   ];
@@ -338,7 +383,12 @@ const Register = ({ onUserRegistrationChange }) => {
                       <li key={item.id}>
                         <label>
                           <input
+<<<<<<< HEAD
                             type="checkbox"
+=======
+                            type="radio"
+                            name={"radAnswer_" + item.type}
+>>>>>>> 6745e7ba879c2af40732e852aa926f4fc7c06d46
                             value={item.id}
                             onChange={() => handleSelectAnswer(item)}
                             checked={selectedAnswers.includes(item.id)}
