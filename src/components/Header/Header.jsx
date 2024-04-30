@@ -1,7 +1,6 @@
 import { useLocation } from "react-router-dom";
 import "./Header.css";
 import { useState } from "react";
-import Modal from "../modal/Modal";
 import { Link } from "react-scroll";
 
 export default function Header({ city, setCity, rayon, setRayon }) {

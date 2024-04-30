@@ -6,6 +6,7 @@ import "./styles.css";
 import EventBlock from "/src/components/EventBlock/EventBlock";
 import Marquee from "react-fast-marquee";
 import Countdown from "react-countdown";
+import { useState, useEffect } from "react";
 
 //? https://stackoverflow.com/questions/45621506/yandex-disk-api-cant-make-request-with-access-token-node-js
 //? https://oauth.yandex.ru/verification_code#access_token=y0_AgAAAABXDDJgAAu0RwAAAAEDXSp_AADjrTfk9cRHhaCH4WTB7CmGi6PWpg&token_type=bearer&expires_in=31533775&cid=uvhk86yf6daxn87286afc48rqw
@@ -27,8 +28,6 @@ import {
   Mousewheel,
   Keyboard,
 } from "swiper/modules";
-// import { Modal } from "../../components/modal/Modal";
-import { Modal } from "@mui/material";
 
 const partners = [
   {
@@ -56,27 +55,36 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
   }
 };
 
-let arr = [];
-const directoryPath = "/new/";
-fetch("https://cloud-api.yandex.net/v1/disk/resources/files", {
-  method: "GET",
-  headers: {
-    Authorization:
-      "OAuth y0_AgAAAABXDDJgAAu0RwAAAAEDXSp_AADjrTfk9cRHhaCH4WTB7CmGi6PWpg",
-  },
-})
-  .then((response) => response.json())
-  .then((data) => {
-    data.items.forEach((item) => {
-      arr.push(item.file);
-    });
-  })
-  .catch((error) => {
-    console.error("Ошибка:", error);
-  });
-console.log(arr);
-
 const Home = () => {
+  const [filesList, setFilesList] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://cloud-api.yandex.net/v1/disk/resources/files",
+          {
+            method: "GET",
+            headers: {
+              Authorization:
+                "OAuth y0_AgAAAABXDDJgAAu0RwAAAAEDXSp_AADjrTfk9cRHhaCH4WTB7CmGi6PWpg",
+            },
+          }
+        );
+        const data = await response.json();
+        const filteredFiles = data.items
+          .filter((item) => item.path.includes("/new/"))
+          .map((item) => item.file);
+        setFilesList(filteredFiles);
+      } catch (error) {
+        console.error("Ошибка:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  console.log(filesList);
+
   return (
     <div className={style.Home}>
       <div className={style.all}>
@@ -92,9 +100,6 @@ const Home = () => {
                 </div>
               </div>
               <div className={style.HomeHeaderDescription}>
-                {arr.map((arr) => (
-                  <h2>{arr.path}</h2>
-                ))}
                 <h2>22 - 23 мая</h2>
                 <p>
                   Оренбург <br />
@@ -338,18 +343,11 @@ const Home = () => {
               modules={[Pagination, Navigation, Autoplay]}
               className="mySwiper"
             >
-              {arr.map((arr, index) => (
+              {filesList.map((filesList, index) => (
                 <SwiperSlide>
-                  <img key={index} src={arr} />
+                  <img key={index} src={filesList} />
                 </SwiperSlide>
               ))}
-
-              <SwiperSlide>
-                <img src="/public/image 17.png" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/public/image 17.png" />
-              </SwiperSlide>
             </Swiper>
           </div>
         </div>
