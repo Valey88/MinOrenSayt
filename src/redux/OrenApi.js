@@ -10,7 +10,9 @@ export const OrenApi = createApi({
         headers: { "Content-Type": "application/json" },
         method: "POST",
         body: {
-          fio: body.fio,
+          surname: body.seName,
+          name: body.name,
+          middlename: body.midleName,
           email: body.email,
           phone: body.phoneNumber,
           organization: body.organization,

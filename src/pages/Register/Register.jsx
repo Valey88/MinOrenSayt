@@ -9,46 +9,54 @@ const Register = ({ onUserRegistrationChange }) => {
   const [selectedAnswers, setSelectedAnswers] = useState([]);
   const [city, setCity] = useState("");
   const [rayon, setRayon] = useState("");
-  const [fio, setFio] = useState("");
+  const [midleName, setMidleName] = useState("");
+  const [seName, setSeName] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [organization, setOrganization] = useState("");
   const [post, setPost] = useState("");
   const [postUser] = useAddUsersMutation();
+  const [error, setError] = useState("");
 
   const answers = [
-    [{
-      id: parseInt("1"),
-      type: 1,
-      name: "Пленарная сессия «Вектор развития кадровой политики: новые инструменты и возможности»",
-    },
-    { id: parseInt("2"), type: 1, name: "Сессия «Цифровое будущее охраны труда»" },
-    {
-      id: parseInt("3"),
-      type: 1,
-      name: "Тренинг «Иван Васильевич не меняет профессию»",
-    },
-    {
-      id: parseInt("4"),
-      type: 1,
-      name: "Торжественная церемония награждения победителей конкурсов",
-    }],
-    [{
-      id: parseInt("5"),
-      type: 2,
-      name: "Пленарная сессия «Основные акценты в изменениях трудового законодательства»",
-    },
-    {
-      id: parseInt("6"),
-      type: 2,
-      name: "Сессия «IT-cервисы в решении кадровых задач»",
-    },
-    { 
-      id: parseInt("7"), 
-      type: 2,
-      name: "Дискуссионная сессия «Встреча без галстуков»" 
-    }],
     [
+      {
+        id: parseInt("1"),
+        type: 1,
+        name: "Пленарная сессия «Вектор развития кадровой политики: новые инструменты и возможности»",
+      },
+      {
+        id: parseInt("2"),
+        type: 1,
+        name: "Сессия «Цифровое будущее охраны труда»",
+      },
+      {
+        id: parseInt("3"),
+        type: 1,
+        name: "Тренинг «Иван Васильевич не меняет профессию»",
+      },
+      {
+        id: parseInt("4"),
+        type: 1,
+        name: "Торжественная церемония награждения победителей конкурсов",
+      },
+      {
+        id: parseInt("5"),
+        type: 2,
+        name: "Пленарная сессия «Основные акценты в изменениях трудового законодательства»",
+      },
+      {
+        id: parseInt("6"),
+        type: 2,
+        name: "Сессия «IT-cервисы в решении кадровых задач»",
+      },
+      {
+        id: parseInt("7"),
+        type: 2,
+        name: "Дискуссионная сессия «Встреча без галстуков»",
+      },
       {
         id: parseInt("8"),
         type: 3,
@@ -63,18 +71,87 @@ const Register = ({ onUserRegistrationChange }) => {
         id: parseInt("10"),
         type: 3,
         name: "Сессия «Особенности расследования несчастных случаев на производстве»",
-      }
-    ]
+      },
+    ],
   ];
   // const answers1 = [
- 
+
   // ];
   // const answers2 = [
-    
+
   // ];
   // const answers3 = [
-   
+
   // ];
+  const handleSubmit = () => {
+    let isValid = true;
+    if (seName.trim() === "") {
+      setError("Это поле обязательно для заполнения");
+      isValid = false;
+    } else {
+      // Здесь вы можете выполнить другие действия при отправке формы
+      setError("");
+      // ...
+    }
+    if (name.trim() === "") {
+      setError("Это поле обязательно для заполнения");
+      isValid = false;
+    } else {
+      // Здесь вы можете выполнить другие действия при отправке формы
+      setError("");
+      // ...
+    }
+    if (midleName.trim() === "") {
+      setError("Это поле обязательно для заполнения");
+      isValid = false;
+    } else {
+      // Здесь вы можете выполнить другие действия при отправке формы
+      setError("");
+      // ...
+    }
+    if (phoneNumber.trim() === "") {
+      setError("Это поле обязательно для заполнения");
+      isValid = false;
+    } else {
+      // Здесь вы можете выполнить другие действия при отправке формы
+      setError("");
+      // ...
+    }
+    if (organization.trim() === "") {
+      setError("Это поле обязательно для заполнения");
+      isValid = false;
+    } else {
+      // Здесь вы можете выполнить другие действия при отправке формы
+      setError("");
+      // ...
+    }
+    if (post.trim() === "") {
+      setError("Это поле обязательно для заполнения");
+      isValid = false;
+    } else {
+      // Здесь вы можете выполнить другие действия при отправке формы
+      setError("");
+      // ...
+    }
+    if (isValid) {
+      // Если все проверки прошли успешно, isValid остается true
+      return true;
+    } else {
+      return false;
+    }
+  };
+  const handleEmailChange = (e) => {
+    const value = e.target.value;
+    setEmail(value);
+
+    if (!value) {
+      setEmailError("Email is required");
+    } else if (!/\S+@\S+\.\S+/.test(value)) {
+      setEmailError("Не коректный Email");
+    } else {
+      setEmailError("");
+    }
+  };
 
   const handleSelectAnswer = (answer) => {
     setSelectedAnswers((prevSelectedAnswers) => {
@@ -82,15 +159,20 @@ const Register = ({ onUserRegistrationChange }) => {
         return prevSelectedAnswers.filter(
           (selectedId) => selectedId !== answer.id
         );
-      } else {
+      } else if (prevSelectedAnswers.length < 3) {
         return [...prevSelectedAnswers, answer.id];
+      } else {
+        // Если массив уже содержит 3 значения, не добавляем новый элемент
+        return prevSelectedAnswers;
       }
     });
   };
 
   const addNewUsers = async () => {
     console.log({
-      fio,
+      name,
+      seName,
+      midleName,
       email,
       phoneNumber,
       organization,
@@ -100,7 +182,9 @@ const Register = ({ onUserRegistrationChange }) => {
       selectedAnswers,
     });
     if (
-      fio &&
+      seName &&
+      name &&
+      midleName &&
       email &&
       phoneNumber &&
       organization &&
@@ -110,7 +194,9 @@ const Register = ({ onUserRegistrationChange }) => {
       selectedAnswers
     ) {
       await postUser({
-        fio,
+        seName,
+        name,
+        midleName,
         email,
         phoneNumber,
         organization,
@@ -119,7 +205,9 @@ const Register = ({ onUserRegistrationChange }) => {
         rayon,
         selectedAnswers,
       }).unwrap();
-      setFio("");
+      setName("");
+      setSeName("");
+      setMidleName("");
       setEmail("");
       setPhoneNumber("");
       setOrganization("");
@@ -139,38 +227,49 @@ const Register = ({ onUserRegistrationChange }) => {
         <div className={styles.containerHead}>
           <h2>Регистрация участников</h2>
         </div>
-        {/* Сделать поля */}
         <div className={styles.modalItemInput}>
           <img src="/public/User.svg" alt="" />
-          <div className={styles.column}>
-            <input
-              className={styles.modalInput}
-              type="text"
-              placeholder="Фамилия"
-              onChange={(e) => setFio(e.target.value)}
-            />
-            <input
-              className={styles.modalInput}
-              type="text"
-              placeholder="Имя"
-              onChange={(e) => setFio(e.target.value)}
-            />
-            <input
-              className={styles.modalInput}
-              type="text"
-              placeholder="Отчество (Если есть)"
-              onChange={(e) => setFio(e.target.value)}
-            />
-          </div>
+          <input
+            className={styles.modalInput}
+            type="text"
+            placeholder="Фамилия"
+            onChange={(e) => setSeName(e.target.value)}
+          />
+          {error && <p style={{ color: "red" }}>{error}</p>}
+        </div>
+        <div className={styles.modalItemInput}>
+          <img src="/public/User.svg" alt="" />
+
+          <input
+            className={styles.modalInput}
+            type="text"
+            placeholder="Отчество"
+            onChange={(e) => setMidleName(e.target.value)}
+          />
+          {error && <p style={{ color: "red" }}>{error}</p>}
+        </div>
+        <div className={styles.modalItemInput}>
+          <img src="/public/User.svg" alt="" />
+
+          <input
+            className={styles.modalInput}
+            type="text"
+            placeholder="Имя"
+            onChange={(e) => setName(e.target.value)}
+          />
+          {error && <p style={{ color: "red" }}>{error}</p>}
         </div>
         <div className={styles.modalItemInput}>
           <img src="/public/Mail.svg" alt="" />
+
           <input
             className={styles.modalInput}
             type="text"
             placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+            onChange={handleEmailChange}
           />
+          {emailError && <p style={{ color: "red" }}>{emailError}</p>}
         </div>
         <div className={styles.modalItemInput}>
           <img src="/public/Phone.svg" alt="" />
@@ -179,7 +278,8 @@ const Register = ({ onUserRegistrationChange }) => {
             type="text"
             placeholder="Номер телефона"
             onChange={(e) => setPhoneNumber(e.target.value)}
-          />
+          />{" "}
+          {error && <p style={{ color: "red" }}>{error}</p>}
         </div>
         <div className={styles.modalItemInput}>
           <img src="/public/Group.svg" alt="" />
@@ -189,6 +289,7 @@ const Register = ({ onUserRegistrationChange }) => {
             type="text"
             onChange={(e) => setOrganization(e.target.value)}
           />
+          {error && <p style={{ color: "red" }}>{error}</p>}
         </div>
         <div className={styles.modalItemInput}>
           <img src="/public/Stuff.svg" alt="" />
@@ -198,6 +299,7 @@ const Register = ({ onUserRegistrationChange }) => {
             type="text"
             onChange={(e) => setPost(e.target.value)}
           />
+          {error && <p style={{ color: "red" }}>{error}</p>}
         </div>
         <div className={styles.modalItemInput}>
           <select
@@ -229,37 +331,37 @@ const Register = ({ onUserRegistrationChange }) => {
               </a>
             </summary>
             <ul>
-              {
-              answers.map((answer) => (
+              {answers.map((answer) =>
                 answer.map((item) => {
                   return (
                     <div>
                       <li key={item.id}>
-                      <label>
-                        <input
-                          type="radio"
-                          name={'radAnswer_'+item.type} 
-                          value={item.id}
-                          onChange={() => handleSelectAnswer(item)}
-                          checked={selectedAnswers.includes(item.id)}
-                        />
-                        {item.name}
-                      </label>
-                    </li>
+                        <label>
+                          <input
+                            type="checkbox"
+                            value={item.id}
+                            onChange={() => handleSelectAnswer(item)}
+                            checked={selectedAnswers.includes(item.id)}
+                          />
+                          {item.name}
+                        </label>
+                      </li>
                     </div>
-                  )
+                  );
                 })
-              ))}
+              )}
             </ul>
           </details>
         </div>
         <button
           className={styles.modalButton}
           onClick={(e) => {
-            addNewUsers();
-            handleButtonClick();
-            e.preventDefault();
-            // window.location.href = "/";
+            if (handleSubmit()) {
+              addNewUsers();
+              handleButtonClick();
+              e.preventDefault();
+              // window.location.href = "/";
+            }
           }}
         >
           Регистрация
