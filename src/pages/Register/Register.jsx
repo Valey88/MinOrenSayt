@@ -20,8 +20,6 @@ const Register = ({ onUserRegistrationChange }) => {
   const [error, setError] = useState("");
 
   const answers = [
-<<<<<<< HEAD
-=======
     [
       {
         id: parseInt("1"),
@@ -61,43 +59,7 @@ const Register = ({ onUserRegistrationChange }) => {
         name: "Дискуссионная сессия «Встреча без галстуков» - 13.00-15.00",
       },
     ],
->>>>>>> 6745e7ba879c2af40732e852aa926f4fc7c06d46
     [
-      {
-        id: parseInt("1"),
-        type: 1,
-        name: "Пленарная сессия «Вектор развития кадровой политики: новые инструменты и возможности»",
-      },
-      {
-        id: parseInt("2"),
-        type: 1,
-        name: "Сессия «Цифровое будущее охраны труда»",
-      },
-      {
-        id: parseInt("3"),
-        type: 1,
-        name: "Тренинг «Иван Васильевич не меняет профессию»",
-      },
-      {
-        id: parseInt("4"),
-        type: 1,
-        name: "Торжественная церемония награждения победителей конкурсов",
-      },
-      {
-        id: parseInt("5"),
-        type: 2,
-        name: "Пленарная сессия «Основные акценты в изменениях трудового законодательства»",
-      },
-      {
-        id: parseInt("6"),
-        type: 2,
-        name: "Сессия «IT-cервисы в решении кадровых задач»",
-      },
-      {
-        id: parseInt("7"),
-        type: 2,
-        name: "Дискуссионная сессия «Встреча без галстуков»",
-      },
       {
         id: parseInt("8"),
         type: 3,
@@ -111,23 +73,11 @@ const Register = ({ onUserRegistrationChange }) => {
       {
         id: parseInt("10"),
         type: 3,
-<<<<<<< HEAD
-        name: "Сессия «Особенности расследования несчастных случаев на производстве»",
-=======
+
         name: "Сессия «Особенности расследования несчастных случаев на производстве» - 15.00-17.00",
->>>>>>> 6745e7ba879c2af40732e852aa926f4fc7c06d46
       },
     ],
   ];
-  // const answers1 = [
-
-  // ];
-  // const answers2 = [
-
-  // ];
-  // const answers3 = [
-
-  // ];
   const handleSubmit = () => {
     let isValid = true;
     if (seName.trim() === "") {
@@ -383,12 +333,7 @@ const Register = ({ onUserRegistrationChange }) => {
                       <li key={item.id}>
                         <label>
                           <input
-<<<<<<< HEAD
                             type="checkbox"
-=======
-                            type="radio"
-                            name={"radAnswer_" + item.type}
->>>>>>> 6745e7ba879c2af40732e852aa926f4fc7c06d46
                             value={item.id}
                             onChange={() => handleSelectAnswer(item)}
                             checked={selectedAnswers.includes(item.id)}
