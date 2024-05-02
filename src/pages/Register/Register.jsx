@@ -328,7 +328,7 @@ const Register = ({ onUserRegistrationChange }) => {
               </a>
             </summary>
             <ul>
-              <h2>Время проведения: 10.30-12.00</h2>
+              <h2 className={styles.timeHead}>Время проведения: 10.30-12.00</h2>
               {answers[0].map((answer) => {
                 return (
                   <div>
@@ -347,7 +347,7 @@ const Register = ({ onUserRegistrationChange }) => {
                   </div>
                 );
               })}
-              <h2>Время проведения: 12.00-13.00</h2>
+              <h2 className={styles.timeHead}>Время проведения: 12.00-13.00</h2>
               {answers[1].map((answer) => {
                 return (
                   <div>
@@ -366,7 +366,7 @@ const Register = ({ onUserRegistrationChange }) => {
                   </div>
                 );
               })}
-              <h2>Время проведения: 13.00-15.00</h2>
+              <h2 className={styles.timeHead}>Время проведения: 13.00-15.00</h2>
               {answers[2].map((answer) => {
                 return (
                   <div>
@@ -385,7 +385,7 @@ const Register = ({ onUserRegistrationChange }) => {
                   </div>
                 );
               })}
-              <h2>Время проведения: 15.00-17.00</h2>
+              <h2 className={styles.timeHead}>Время проведения: 15.00-17.00</h2>
               {answers[3].map((answer) => {
                 return (
                   <div>

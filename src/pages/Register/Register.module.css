@@ -195,6 +195,9 @@ a.button {
     height: 16px;
     margin-right: 1rem;
   }
+  .timeHead {
+    font-size: 1.5rem;
+  }
 }
 @media (max-width: 766px) {
   .modalItemInput {
@@ -229,7 +232,6 @@ a.button {
     font-weight: 400;
     font-size: 1.4rem;
   }
-
   .dropdown ul {
     margin-top: 2rem;
     width: 35rem;
@@ -286,7 +288,7 @@ a.button {
 
   .dropdown ul {
     margin-top: 2rem;
-    width: 430px;
+    width: 300px;
   }
 
   .dropdown ul li {
