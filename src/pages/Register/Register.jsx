@@ -24,57 +24,58 @@ const Register = ({ onUserRegistrationChange }) => {
       {
         id: parseInt("1"),
         type: 1,
-        name: "Пленарная сессия «Вектор развития кадровой политики: новые инструменты и возможности» - 10.30-12.00",
+        name: "Пленарная сессия «Вектор развития кадровой политики: новые инструменты и возможности»",
       },
       {
         id: parseInt("2"),
         type: 1,
-        name: "Сессия «Цифровое будущее охраны труда» - 10.30-12.00",
+        name: "Сессия «Цифровое будущее охраны труда»",
       },
       {
         id: parseInt("3"),
         type: 1,
-        name: "Тренинг «Иван Васильевич не меняет профессию» - 10.30-12.00",
+        name: "Тренинг «Иван Васильевич не меняет профессию»",
       },
+    ],
+    [
       {
         id: parseInt("4"),
         type: 1,
-        name: "Торжественная церемония награждения победителей конкурсов - 12.00-13.00",
+        name: "Торжественная церемония награждения победителей конкурсов",
       },
     ],
     [
       {
         id: parseInt("5"),
         type: 2,
-        name: "Пленарная сессия «Основные акценты в изменениях трудового законодательства» - 13.00-15.00",
+        name: "Пленарная сессия «Основные акценты в изменениях трудового законодательства»",
       },
       {
         id: parseInt("6"),
         type: 2,
-        name: "Сессия «IT-cервисы в решении кадровых задач» - 13.00-15.00",
+        name: "Сессия «IT-cервисы в решении кадровых задач»",
       },
       {
         id: parseInt("7"),
         type: 2,
-        name: "Дискуссионная сессия «Встреча без галстуков» - 13.00-15.00",
+        name: "Дискуссионная сессия «Встреча без галстуков»",
       },
     ],
     [
       {
         id: parseInt("8"),
         type: 3,
-        name: "Концертная программа «Открытие третьего трудового семестра» - 15.00-17.00",
+        name: "Концертная программа «Открытие третьего трудового семестра»",
       },
       {
         id: parseInt("9"),
         type: 3,
-        name: "Дискуссионная сессия «Охрана труда в бюджетных организациях» - 15.00-17.00",
+        name: "Дискуссионная сессия «Охрана труда в бюджетных организациях»",
       },
       {
         id: parseInt("10"),
         type: 3,
-
-        name: "Сессия «Особенности расследования несчастных случаев на производстве» - 15.00-17.00",
+        name: "Сессия «Особенности расследования несчастных случаев на производстве»",
       },
     ],
   ];
@@ -154,7 +155,7 @@ const Register = ({ onUserRegistrationChange }) => {
         return prevSelectedAnswers.filter(
           (selectedId) => selectedId !== answer.id
         );
-      } else if (prevSelectedAnswers.length < 3) {
+      } else if (prevSelectedAnswers.length < 4) {
         return [...prevSelectedAnswers, answer.id];
       } else {
         // Если массив уже содержит 3 значения, не добавляем новый элемент
@@ -327,25 +328,82 @@ const Register = ({ onUserRegistrationChange }) => {
               </a>
             </summary>
             <ul>
-              {answers.map((answer) =>
-                answer.map((item) => {
-                  return (
-                    <div>
-                      <li key={item.id}>
-                        <label>
-                          <input
-                            type="checkbox"
-                            value={item.id}
-                            onChange={() => handleSelectAnswer(item)}
-                            checked={selectedAnswers.includes(item.id)}
-                          />
-                          {item.name}
-                        </label>
-                      </li>
-                    </div>
-                  );
-                })
-              )}
+              <h2>Время проведения: 10.30-12.00</h2>
+              {answers[0].map((answer) => {
+                return (
+                  <div>
+                    <li key={answer.id}>
+                      <h2>{answer.time}</h2>
+                      <label style={{ color: "red" }}>
+                        <input
+                          type="checkbox"
+                          value={answer.id}
+                          onChange={() => handleSelectAnswer(answer)}
+                          checked={selectedAnswers.includes(answer.id)}
+                        />
+                        {answer.name}
+                      </label>
+                    </li>
+                  </div>
+                );
+              })}
+              <h2>Время проведения: 12.00-13.00</h2>
+              {answers[1].map((answer) => {
+                return (
+                  <div>
+                    <li key={answer.id}>
+                      <h2>{answer.time}</h2>
+                      <label style={{ color: "#fdcc62" }}>
+                        <input
+                          type="checkbox"
+                          value={answer.id}
+                          onChange={() => handleSelectAnswer(answer)}
+                          checked={selectedAnswers.includes(answer.id)}
+                        />
+                        {answer.name}
+                      </label>
+                    </li>
+                  </div>
+                );
+              })}
+              <h2>Время проведения: 13.00-15.00</h2>
+              {answers[2].map((answer) => {
+                return (
+                  <div>
+                    <li key={answer.id}>
+                      <h2>{answer.time}</h2>
+                      <label style={{ color: "blue" }}>
+                        <input
+                          type="checkbox"
+                          value={answer.id}
+                          onChange={() => handleSelectAnswer(answer)}
+                          checked={selectedAnswers.includes(answer.id)}
+                        />
+                        {answer.name}
+                      </label>
+                    </li>
+                  </div>
+                );
+              })}
+              <h2>Время проведения: 15.00-17.00</h2>
+              {answers[3].map((answer) => {
+                return (
+                  <div>
+                    <li key={answer.id}>
+                      <h2>{answer.time}</h2>
+                      <label style={{ color: "rgb(33, 234, 33)" }}>
+                        <input
+                          type="checkbox"
+                          value={answer.id}
+                          onChange={() => handleSelectAnswer(answer)}
+                          checked={selectedAnswers.includes(answer.id)}
+                        />
+                        {answer.name}
+                      </label>
+                    </li>
+                  </div>
+                );
+              })}
             </ul>
           </details>
         </div>
