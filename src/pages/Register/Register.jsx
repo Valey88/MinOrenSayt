@@ -222,6 +222,7 @@ const Register = ({ onUserRegistrationChange }) => {
         <div className={styles.containerHead}>
           <h2>Регистрация участников</h2>
         </div>
+        {error && <div style={{ color: "red" }}>{error}</div>}
         <div className={styles.modalItemInput}>
           <img src="/public/User.svg" alt="" />
           <input
@@ -230,8 +231,8 @@ const Register = ({ onUserRegistrationChange }) => {
             placeholder="Фамилия"
             onChange={(e) => setSeName(e.target.value)}
           />
-          {error && <p style={{ color: "red" }}>{error}</p>}
         </div>
+        {error && <div style={{ color: "red" }}>{error}</div>}
         <div className={styles.modalItemInput}>
           <img src="/public/User.svg" alt="" />
 
@@ -241,8 +242,8 @@ const Register = ({ onUserRegistrationChange }) => {
             placeholder="Отчество"
             onChange={(e) => setMidleName(e.target.value)}
           />
-          {error && <p style={{ color: "red" }}>{error}</p>}
         </div>
+        {error && <div style={{ color: "red" }}>{error}</div>}
         <div className={styles.modalItemInput}>
           <img src="/public/User.svg" alt="" />
 
@@ -252,8 +253,8 @@ const Register = ({ onUserRegistrationChange }) => {
             placeholder="Имя"
             onChange={(e) => setName(e.target.value)}
           />
-          {error && <p style={{ color: "red" }}>{error}</p>}
         </div>
+        {emailError && <p style={{ color: "red" }}>{emailError}</p>}
         <div className={styles.modalItemInput}>
           <img src="/public/Mail.svg" alt="" />
 
@@ -264,8 +265,8 @@ const Register = ({ onUserRegistrationChange }) => {
             value={email}
             onChange={handleEmailChange}
           />
-          {emailError && <p style={{ color: "red" }}>{emailError}</p>}
         </div>
+        {error && <div style={{ color: "red" }}>{error}</div>}
         <div className={styles.modalItemInput}>
           <img src="/public/Phone.svg" alt="" />
           <input
@@ -273,9 +274,10 @@ const Register = ({ onUserRegistrationChange }) => {
             type="text"
             placeholder="Номер телефона"
             onChange={(e) => setPhoneNumber(e.target.value)}
-          />{" "}
-          {error && <p style={{ color: "red" }}>{error}</p>}
+          />
         </div>
+        {error && <div style={{ color: "red" }}>{error}</div>}
+
         <div className={styles.modalItemInput}>
           <img src="/public/Group.svg" alt="" />
           <input
@@ -284,8 +286,8 @@ const Register = ({ onUserRegistrationChange }) => {
             type="text"
             onChange={(e) => setOrganization(e.target.value)}
           />
-          {error && <p style={{ color: "red" }}>{error}</p>}
         </div>
+        {error && <p style={{ color: "red" }}>{error}</p>}
         <div className={styles.modalItemInput}>
           <img src="/public/Stuff.svg" alt="" />
           <input
@@ -294,7 +296,6 @@ const Register = ({ onUserRegistrationChange }) => {
             type="text"
             onChange={(e) => setPost(e.target.value)}
           />
-          {error && <p style={{ color: "red" }}>{error}</p>}
         </div>
         <div className={styles.modalItemInput}>
           <select
