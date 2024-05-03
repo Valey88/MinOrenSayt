@@ -66,13 +66,13 @@ const Home = () => {
             method: "GET",
             headers: {
               Authorization:
-                "OAuth y0_AgAAAABXDDJgAAu0RwAAAAEDXSp_AADjrTfk9cRHhaCH4WTB7CmGi6PWpg",
+                "OAuth y0_AgAAAAB11PL1AAu42gAAAAEDvRlVAACAdsUIsOFOMZ6DkqU69b1ktmXDaA",
             },
           }
         );
         const data = await response.json();
         const filteredFiles = data.items
-          .filter((item) => item.path.includes("/new/"))
+          .filter((item) => item.path.includes("/MinTrudOrenForum"))
           .map((item) => item.file);
         setFilesList(filteredFiles);
       } catch (error) {
