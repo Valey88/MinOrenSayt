@@ -55,6 +55,10 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
   }
 };
 
+function getInitialZoom() {
+  return window.innerWidth < 700 ? 15 : 16;
+}
+
 const Home = () => {
   const [filesList, setFilesList] = useState([]);
   useEffect(() => {
@@ -220,7 +224,10 @@ const Home = () => {
             <div className={style.mapContainer}>
               <YMaps>
                 <Map
-                  defaultState={{ center: [51.762413, 55.11635], zoom: 16 }}
+                  defaultState={{
+                    center: [51.762413, 55.11635],
+                    zoom: getInitialZoom(),
+                  }}
                   className={style.map}
                   modules={["geoObject.addon.balloon", "geoObject.addon.hint"]}
                 >
@@ -230,11 +237,19 @@ const Home = () => {
                       balloonContentHeader: "Площадки проведения мероприятий:",
                       balloonContentBody: `
                       <ul>
-                        <li>Холл ДКиС «Газовик»</li>
-                        <li>Большой театрально-концертный зал</li>
-                        <li>Малый театрально-концертный зал</li>
-                        <li>Зал совещаний</li><li>Зимний сад</li>
-                        <li>Стадион ДКиС «Газовик»</li>
+                        <li>Пленарная сессия «Вектор развития кадровой политики: новые инструменты и возможности»</li>
+                        <li>Сессия «Цифровое будущее охраны труда»</li> 
+                        <li>Тренинг «Иван Васильевич не меняет профессию»</li>
+                        <hr/>
+                        <li>Торжественная церемония награждения победителей конкурсов</li> 
+                        <hr/>
+                        <li>Пленарная сессия «Основные акценты в изменениях трудового законодательства»</li>
+                        <li>Сессия «IT-cервисы в решении кадровых задач»</li>
+                        <hr/>
+                        <li>Дискуссионная сессия «Встреча без галстуков»</li>
+                        <li>Концертная программа «Открытие третьего трудового семестра»</li>
+                        <li>Дискуссионная сессия «Охрана труда в бюджетных организациях»</li>
+                        <li>Сессия «Особенности расследования несчастных случаев на производстве»</li>
                       </ul>
                       `,
                     }}
@@ -349,6 +364,14 @@ const Home = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
+            <div className={style.underSlider}>
+              <a href="https://disk.yandex.ru/d/c3z4fBF-C2f93A">
+                <p>
+                  Скачать фотографии с форума вы можете на нашем Яндекс диске!
+                </p>
+                <img src="/public/diskLogo.svg" alt="" />
+              </a>
+            </div>
           </div>
         </div>
 

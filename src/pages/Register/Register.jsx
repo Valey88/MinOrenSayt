@@ -272,6 +272,7 @@ const Register = ({ onUserRegistrationChange }) => {
           <img src="/public/Phone.svg" alt="" />
           <input
             className={styles.modalInput}
+            defaultValue="+7"
             type="text"
             placeholder="Номер телефона"
             onChange={(e) => setPhoneNumber(e.target.value)}

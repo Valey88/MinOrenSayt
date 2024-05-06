@@ -179,17 +179,14 @@ a.button {
     font-weight: 400;
     font-size: 1.6rem;
   }
-
   .dropdown ul {
     margin-top: 2rem;
     width: 40rem;
   }
-
   .dropdown ul li {
     font-size: 1.2rem;
     margin: 1rem;
   }
-
   .dropdown ul li input {
     width: 16px;
     height: 16px;
@@ -222,7 +219,6 @@ a.button {
     height: 5.8rem;
     font-size: 1.5rem;
   }
-
   .dropidropi {
     margin-bottom: 2.6rem;
   }
@@ -236,12 +232,10 @@ a.button {
     margin-top: 2rem;
     width: 35rem;
   }
-
   .dropdown ul li {
     font-size: 1.2rem;
     margin: 1rem;
   }
-
   .dropdown ul li input {
     width: 16px;
     height: 16px;
@@ -295,7 +289,6 @@ a.button {
     font-size: 1.2rem;
     margin: 1rem;
   }
-
   .dropdown ul li input {
     width: 16px;
     height: 16px;
