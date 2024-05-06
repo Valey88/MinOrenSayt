@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./Home.module.css";
-import { YMaps, Map, GeoObject, Placemark } from "@pbe/react-yandex-maps";
+import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./styles.css";
 import EventBlock from "/src/components/EventBlock/EventBlock";
@@ -261,7 +261,6 @@ const Home = () => {
                     }}
                     defaultGeometry={[51.763885, 55.119018]}
                   />
-
                   <Placemark
                     properties={{
                       hintContent: "ОГАУ,  «Город профессий»",
@@ -365,7 +364,7 @@ const Home = () => {
               ))}
             </Swiper>
             <div className={style.underSlider}>
-              <a href="https://disk.yandex.ru/d/c3z4fBF-C2f93A">
+              <a href="https://disk.yandex.ru/d/c3z4fBF-C2f93A" target="_blank">
                 <p>
                   Скачать фотографии с форума вы можете на нашем Яндекс диске!
                 </p>

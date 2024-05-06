@@ -223,7 +223,7 @@
   justify-content: space-between;
   align-items: center;
   font-size: 2.5rem;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 }
 .mapContainer li {
   margin: 0.6rem 0;
@@ -244,7 +244,7 @@
 .underSlider a {
   display: flex;
   font-size: 2.5rem;
-  margin-top: 4 rem;
+  margin-top: 2rem;
   align-items: center;
   justify-content: center;
   grid-gap: 2rem;
@@ -331,7 +331,8 @@
     width: 60rem;
     height: 30rem;
   }
-  .underMap {
+  .underMap,
+  .underSlider a {
     font-size: 1.8rem;
     margin-top: 1.5rem;
   }
@@ -415,7 +416,8 @@
     border-radius: 5rem;
     margin: 0 5rem;
   }
-  .underMap {
+  .underMap,
+  .underSlider a {
     font-size: 1.5rem;
   }
 }
@@ -499,7 +501,11 @@
     margin: 0.6rem 0;
     font-size: 1.1rem;
   }
-  .underMap {
-    font-size: 1.2rem;
+  .underMap,
+  .underSlider a {
+    font-size: 1.3rem;
+  }
+  .underSlider img{
+    width: 40px;
   }
 }
