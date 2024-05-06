@@ -209,7 +209,7 @@ const Home = () => {
                     color="red"
                     eventList="\public\Мероприятия ОГАУ.docx"
                   >
-                    Город профессий (ОГАУ)
+                    Мир профессий (ОГАУ)
                   </EventBlock>
                 </div>
                 <img className={style.eventList} src="\public\EventList.svg" />
@@ -265,6 +265,28 @@ const Home = () => {
                   />
                   <Placemark
                     properties={{
+                      hintContent: "ОГАУ,  «Мир профессий»",
+                      balloonContentHeader: "Площадки проведения мероприятий:",
+                      balloonContentBody: `
+                      <ul>
+                        <li>Площадка «Комплексная безопасность»</li>
+                        <li>Площадка «Экономика и право»</li>
+                        <li>Площадка «Ветеринарная медицины»</li>
+                        <li>Площадка «Профессия инженер»</li>
+                        <li>Площадка «Молодежная политика»</li>
+                      </ul>
+                      `,
+                    }}
+                    options={{
+                      iconLayout: "default#image",
+                      iconImageHref: "/public/logoMark.svg",
+                      iconImageSize: [60, 60],
+                      iconImageOffset: [-30, -55],
+                    }}
+                    defaultGeometry={[51.762709, 55.111921]}
+                  />
+                  {/* <Placemark
+                    properties={{
                       hintContent: "ОГАУ,  «Город профессий»",
                       balloonContentHeader: "Площадки проведения мероприятий:",
                       balloonContentBody: `
@@ -303,38 +325,16 @@ const Home = () => {
                       iconLayout: "default#image",
                       iconImageHref: "/public/logoMark.svg",
                       iconImageSize: [60, 60],
-                      iconImageOffset: [-30, -55],
-                    }}
-                    defaultGeometry={[51.762709, 55.111921]}
-                  />
-                  <Placemark
-                    properties={{
-                      hintContent: "ОГАУ,  «Город профессий»",
-                      balloonContentHeader: "Площадки проведения мероприятий:",
-                      balloonContentBody: `
-                      <ul>
-                        <li>Площадка «Комплексная безопасность»</li>
-                        <li>Площадка «Экономика и право»</li>
-                        <li>Площадка «Ветеринарная медицины»</li>
-                        <li>Площадка «Профессия инженер»</li>
-                        <li>Площадка «Молодежная политика»</li>
-                      </ul>
-                      `,
-                    }}
-                    options={{
-                      iconLayout: "default#image",
-                      iconImageHref: "/public/logoMark.svg",
-                      iconImageSize: [60, 60],
                       iconImageOffset: [-2, -70],
                     }}
                     defaultGeometry={[51.760786, 55.112532]}
-                  />
+                  />*/}
                 </Map>
               </YMaps>
             </div>
             <div className={style.underMap}>
               <p>ДКиС «Газовик»</p>
-              <p>ОГАУ, «Город профессий»</p>
+              <p>ОГАУ, «Мир профессий»</p>
             </div>
           </div>
         </div>
