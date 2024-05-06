@@ -45,6 +45,8 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
   } else {
     return (
       <p>
+        Регистрация заканчивается <strong>31 августа </strong>
+        <br />
         До конца регистрации осталось:
         <br />
         <strong>
@@ -104,7 +106,7 @@ const Home = () => {
                 </div>
               </div>
               <div className={style.HomeHeaderDescription}>
-                <h2>22 - 23 мая</h2>
+                <h2>4 Сентября</h2>
                 <p>
                   Оренбург <br />
                   ДКиС «Газовик»
