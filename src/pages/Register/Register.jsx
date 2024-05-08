@@ -20,65 +20,70 @@ const Register = ({ onUserRegistrationChange }) => {
   const [error, setError] = useState("");
 
   const answers = [
-    [
-      {
-        id: parseInt("1"),
-        type: 1,
-        name: "Пленарная сессия «Вектор развития кадровой политики: новые инструменты и возможности»",
-      },
-      {
-        id: parseInt("2"),
-        type: 1,
-        name: "Сессия «Цифровое будущее охраны труда»",
-      },
-      {
-        id: parseInt("3"),
-        type: 1,
-        name: "Тренинг «Иван Васильевич не меняет профессию»",
-      },
-    ],
-    [
-      {
-        id: parseInt("4"),
-        type: 1,
-        name: "Торжественная церемония награждения победителей конкурсов",
-      },
-    ],
-    [
-      {
-        id: parseInt("5"),
-        type: 2,
-        name: "Пленарная сессия «Основные акценты в изменениях трудового законодательства»",
-      },
-      {
-        id: parseInt("6"),
-        type: 2,
-        name: "Сессия «IT-cервисы в решении кадровых задач»",
-      },
-      {
-        id: parseInt("7"),
-        type: 2,
-        name: "Дискуссионная сессия «Встреча без галстуков»",
-      },
-    ],
-    [
-      {
-        id: parseInt("8"),
-        type: 3,
-        name: "Концертная программа «Открытие третьего трудового семестра»",
-      },
-      {
-        id: parseInt("9"),
-        type: 3,
-        name: "Дискуссионная сессия «Охрана труда в бюджетных организациях»",
-      },
-      {
-        id: parseInt("10"),
-        type: 3,
-        name: "Сессия «Особенности расследования несчастных случаев на производстве»",
-      },
-    ],
+    {
+      category: "category1",
+      options: [
+        {
+          id: 1,
+          name: "Пленарная сессия «Вектор развития кадровой политики: новые инструменты и возможности»",
+        },
+        {
+          id: 2,
+          name: "Сессия «Цифровое будущее охраны труда»",
+        },
+        {
+          id: 3,
+          name: "Тренинг «Иван Васильевич не меняет профессию»",
+        },
+      ],
+    },
+    {
+      category: "category2",
+      options: [
+        {
+          id: 4,
+          name: "Торжественная церемония награждения победителей конкурсов",
+        },
+      ],
+    },
+    {
+      category: "category3",
+      options: [
+        {
+          id: 5,
+          name: "Пленарная сессия «Основные акценты в изменениях трудового законодательства»",
+        },
+        {
+          id: 6,
+          name: "Сессия «IT-cервисы в решении кадровых задач»",
+        },
+        {
+          id: 7,
+          name: "Дискуссионная сессия «Встреча без галстуков»",
+        },
+      ],
+    },
+    {
+      category: "category4",
+      options: [
+        {
+          id: 8,
+          name: "Концертная программа «Открытие третьего трудового семестра»",
+        },
+        {
+          id: 9,
+          name: "Дискуссионная сессия «Охрана труда в бюджетных организациях»",
+        },
+        {
+          id: 10,
+          name: "Сессия «Особенности расследования несчастных случаев на производстве»",
+        },
+      ],
+    },
   ];
+
+  console.log(answers[0].options);
+
   const handleSubmit = () => {
     let isValid = true;
     if (seName.trim() === "") {
@@ -151,15 +156,33 @@ const Register = ({ onUserRegistrationChange }) => {
 
   const handleSelectAnswer = (answer) => {
     setSelectedAnswers((prevSelectedAnswers) => {
+      const selectedCategory = answers.find((a) =>
+        a.options.some((opt) => opt.id === answer.id)
+      ).category;
+
+      const selectedInSameCategory = prevSelectedAnswers.some((id) => {
+        const category = answers.find((a) =>
+          a.options.some((opt) => opt.id === id)
+        ).category;
+        return category === selectedCategory;
+      });
+
+      if (selectedInSameCategory) {
+        alert("Можно выбрать только один ответ в каждой категории");
+        return prevSelectedAnswers;
+      }
+
       if (prevSelectedAnswers.includes(answer.id)) {
         return prevSelectedAnswers.filter(
           (selectedId) => selectedId !== answer.id
         );
-      } else if (prevSelectedAnswers.length < 4) {
-        return [...prevSelectedAnswers, answer.id];
       } else {
-        // Если массив уже содержит 3 значения, не добавляем новый элемент
-        return prevSelectedAnswers;
+        if (prevSelectedAnswers.length < 4) {
+          return [...prevSelectedAnswers, answer.id];
+        } else {
+          alert("Можно выбрать только один ответ в каждой категории");
+          return prevSelectedAnswers;
+        }
       }
     });
   };
@@ -300,22 +323,12 @@ const Register = ({ onUserRegistrationChange }) => {
           />
         </div>
         <div className={styles.modalItemInput}>
-          <select
-            onChange={(e) => setCity(e.target.value)}
-            className={styles.cityList}
-          >
-            <option value="">Выберите город</option>
-            <option value="г. Оренбург">г. Оренбург</option>
-            <option value="г. Бугуруслан">г. Бугуруслан</option>
-            <option value="г. Медногорск">г. Медногорск</option>
-            <option value="г. Новотроицк">г. Новотроицк</option>
-            <option value="г. Орск">г. Орск</option>
-          </select>
+          <img src="/public/Place.svg" alt="" />
           <select
             onChange={(e) => setRayon(e.target.value)}
             className={styles.cityList}
           >
-            <option value="">Выберите район</option>
+            <option value="">Местоположение</option>
             {rayons.map((rayon) => (
               <option value={rayon.name1}>{rayon.name2}</option>
             ))}
@@ -330,7 +343,7 @@ const Register = ({ onUserRegistrationChange }) => {
             </summary>
             <ul>
               <h2 className={styles.timeHead}>Время проведения: 10.30-12.00</h2>
-              {answers[0].map((answer) => {
+              {answers[0].options.map((answer) => {
                 return (
                   <div>
                     <li key={answer.id}>
@@ -349,7 +362,7 @@ const Register = ({ onUserRegistrationChange }) => {
                 );
               })}
               <h2 className={styles.timeHead}>Время проведения: 12.00-13.00</h2>
-              {answers[1].map((answer) => {
+              {answers[1].options.map((answer) => {
                 return (
                   <div>
                     <li key={answer.id}>
@@ -368,7 +381,7 @@ const Register = ({ onUserRegistrationChange }) => {
                 );
               })}
               <h2 className={styles.timeHead}>Время проведения: 13.00-15.00</h2>
-              {answers[2].map((answer) => {
+              {answers[2].options.map((answer) => {
                 return (
                   <div>
                     <li key={answer.id}>
@@ -387,7 +400,7 @@ const Register = ({ onUserRegistrationChange }) => {
                 );
               })}
               <h2 className={styles.timeHead}>Время проведения: 15.00-17.00</h2>
-              {answers[3].map((answer) => {
+              {answers[3].options.map((answer) => {
                 return (
                   <div>
                     <li key={answer.id}>

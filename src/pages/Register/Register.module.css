@@ -23,6 +23,10 @@
   align-items: center;
   grid-gap: 2.5rem;
   margin-bottom: 4rem;
+  justify-content: center;
+  width: 100%;
+}
+.modalItemInput select{
   width: 100%;
 }
 .modalButton {
