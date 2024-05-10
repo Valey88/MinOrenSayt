@@ -7,6 +7,7 @@ import EventBlock from "/src/components/EventBlock/EventBlock";
 import Marquee from "react-fast-marquee";
 import Countdown from "react-countdown";
 import { useState, useEffect } from "react";
+import ExportData from "../../components/ExportData/ExportData";
 
 //? https://stackoverflow.com/questions/45621506/yandex-disk-api-cant-make-request-with-access-token-node-js
 //? https://oauth.yandex.ru/verification_code#access_token=y0_AgAAAABXDDJgAAu0RwAAAAEDXSp_AADjrTfk9cRHhaCH4WTB7CmGi6PWpg&token_type=bearer&expires_in=31533775&cid=uvhk86yf6daxn87286afc48rqw
@@ -137,6 +138,8 @@ const Home = () => {
             </div>
           </div>
         </div>
+
+        <ExportData></ExportData>
 
         <div className={style.aboutSection} id="purpose">
           <div className={style.heading}>
