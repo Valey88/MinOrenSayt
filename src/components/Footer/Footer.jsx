@@ -31,7 +31,7 @@ export default function Footer({ city, setCity, rayon, setRayon }) {
             </Link>
           </li>
           <li>
-            <Link to="gallery" smooth={100}>
+            <Link to="gallery" smooth={true}>
               Галерея
             </Link>
           </li>

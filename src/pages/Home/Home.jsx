@@ -8,12 +8,6 @@ import Marquee from "react-fast-marquee";
 import Countdown from "react-countdown";
 import { useState, useEffect } from "react";
 
-//? https://stackoverflow.com/questions/45621506/yandex-disk-api-cant-make-request-with-access-token-node-js
-//? https://oauth.yandex.ru/verification_code#access_token=y0_AgAAAABXDDJgAAu0RwAAAAEDXSp_AADjrTfk9cRHhaCH4WTB7CmGi6PWpg&token_type=bearer&expires_in=31533775&cid=uvhk86yf6daxn87286afc48rqw
-//? https://disk.yandex.ru/client/disk/resources
-//? https://oauth.yandex.ru/client/3e2b9d3c5b6749b6b3ea7611d5f6547c
-//? https://github.com/Kolyaj/yandex-disk/blob/master/readme.md
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -88,8 +82,6 @@ const Home = () => {
 
     fetchData();
   }, []);
-
-  console.log(filesList);
 
   return (
     <div className={style.Home}>
@@ -369,8 +361,8 @@ const Home = () => {
               className="mySwiper"
             >
               {filesList.map((filesList, index) => (
-                <SwiperSlide>
-                  <img key={index} src={filesList} />
+                <SwiperSlide key={index}>
+                  <img src={filesList} />
                 </SwiperSlide>
               ))}
             </Swiper>
@@ -392,8 +384,12 @@ const Home = () => {
           <div className={style.Center}>
             <div className={style.partner}>
               <Marquee speed={100} pauseOnClick="true">
-                {partners.map((partner) => (
-                  <img className={style.partnerIcon} src={partner.path} />
+                {partners.map((partner, index) => (
+                  <img
+                    key={index}
+                    className={style.partnerIcon}
+                    src={partner.path}
+                  />
                 ))}
               </Marquee>
             </div>

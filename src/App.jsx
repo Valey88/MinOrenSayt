@@ -4,7 +4,6 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
 import { Route, Routes } from "react-router-dom";
-import Modal from "./components/modal/Modal";
 import Footer from "./components/Footer/Footer";
 import Register from "./pages/Register/Register";
 
